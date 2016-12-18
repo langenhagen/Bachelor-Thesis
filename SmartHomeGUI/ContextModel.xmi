@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Context:Environment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Context="http://www.dai-labor.de/~masp/Context-1.3.ecore" xmlns:Properties="http://www.dai-labor.de/~masp/Properties.ecore" initialAssistant="//@assistants.9">
+  <places xsi:type="Context:Room" id="KITCHEN" name="Kitchen" elements="//@devices.12 //@devices.14 //@devices.16 //@devices.1/@resources.0 //@devices.1/@resources.1 //@devices.2/@resources.0 //@devices.2/@resources.1 //@devices.5/@resources.0 //@devices.9/@resources.0 //@devices.9/@resources.1 //@devices.10/@resources.0 //@places.0/@doors.0 //@places.0/@doors.1 //@devices.32 //@devices.12/@subDevice.0 //@devices.30 //@devices.27">
+    <areas>
+      <origin x="580.0" y="-100.0" z="0.0"/>
+      <span x="330.0" y="810.0" z="220.0"/>
+    </areas>
+    <doors id="KITCHEN ENTRANCE" name="Kitchen Entrance" place="//@places.0" target="//@places.4">
+      <position x="733.0" y="-100.0" z="0.0"/>
+      <open/>
+      <span x="80.0" y="0.0" z="200.0"/>
+    </doors>
+    <doors id="KITCHEN LIVING ROOM" name="Kitchen Living Room" place="//@places.0" target="//@places.1">
+      <position x="580.0" y="125.0" z="0.0"/>
+      <open/>
+      <span x="0.0" y="120.0" z="200.0"/>
+    </doors>
+  </places>
+  <places xsi:type="Context:Room" id="LIVING_ROOM" name="Living Room" elements="//@devices.13 //@devices.15 //@devices.17 //@devices.11/@resources.0 //@devices.11/@resources.1 //@devices.8/@resources.1 //@devices.8/@resources.0 //@devices.7/@resources.0 //@devices.6/@resources.0 //@devices.6/@resources.1 //@devices.25 //@devices.18 //@places.1/@doors.1 //@places.1/@doors.0 //@devices.33 //@devices.0/@resources.0 //@devices.31 //@devices.28">
+    <areas>
+      <origin x="0.0" y="-100.0" z="0.0"/>
+      <span x="580.0" y="810.0" z="220.0"/>
+    </areas>
+    <doors id="LIVING ROOM ENTRANCE" name="Living Room Entrance" place="//@places.1" target="//@places.4">
+      <position x="316.0" y="-100.0" z="0.0"/>
+      <open/>
+      <span x="100.0" y="0.0" z="200.0"/>
+    </doors>
+    <doors id="LIVING ROOM OFFICE" name="Living Room Office" place="//@places.1" target="//@places.2">
+      <position x="0.0" y="540.0" z="0.0"/>
+      <open/>
+      <span x="0.0" y="120.0" z="200.0"/>
+    </doors>
+  </places>
+  <places xsi:type="Context:Room" id="WORKROOM" name="Office" elements="//@devices.19 //@devices.4/@resources.1 //@devices.4/@resources.0 //@devices.3/@resources.1 //@devices.3/@resources.0 //@devices.22 //@places.2/@doors.0 //@devices.26 //@devices.34">
+    <areas>
+      <origin x="-300.0" y="-100.0" z="0.0"/>
+      <span x="300.0" y="810.0" z="220.0"/>
+    </areas>
+    <doors id="OFFICE ENTRANCE" name="Office Studio" place="//@places.2" target="//@places.4">
+      <position x="-300.0" y="250.0" z="0.0"/>
+      <open/>
+      <span x="0.0" y="100.0" z="200.0"/>
+    </doors>
+  </places>
+  <places xsi:type="Context:Room" id="HEALTH ROOM" name="Health Room" elements="//@devices.23 //@devices.24 //@places.3/@doors.0 //@devices.29">
+    <areas>
+      <origin x="-850.0" y="-100.0" z="0.0"/>
+      <span x="550.0" y="810.0" z="220.0"/>
+    </areas>
+    <doors id="HEALTH ROOM FLUR" name="Health Room Flur" place="//@places.3" target="//@places.4">
+      <position x="-425.0" y="-100.0" z="0.0"/>
+      <open/>
+      <span x="100.0" y="0.0" z="200.0"/>
+    </doors>
+  </places>
+  <places xsi:type="Context:Outdoors" id="FLUR" name="Flur" elements="//@users.2 //@users.0 //@users.1 //@users.3">
+    <areas>
+      <origin x="-450.0" y="-200.0" z="0.0"/>
+      <span x="1360.0" y="100.0" z="220.0"/>
+    </areas>
+  </places>
+  <providers xsi:type="Context:LocalisationProviderProxy" apiClass="org.sercho.masp.context.providers.location.ubisense.UBLocProvider">
+    <configuration key="Host" value="192.168.1.32"/>
+    <configuration key="Port" value="4443"/>
+    <configuration key="ScaleFactor" value="100"/>
+  </providers>
+  <providers xsi:type="Context:LocalisationProviderProxy" apiClass="org.sercho.masp.context.providers.location.rfid.RFIDReaderLocalisationProvider">
+    <tags id="01068ddb81" name="Karte von Kevin" element="//@users.0"/>
+    <tags id="010693630c" name="Karte von Melanie" element="//@users.1"/>
+    <tags id="01068e06dc" name="Karte von Kurt" element="//@users.2"/>
+    <configuration key="ReaderID" value="89547"/>
+    <configuration key="Ip" value="192.168.1.80"/>
+    <configuration key="Port" value="5001"/>
+    <configuration key="xEntrance" value="750"/>
+    <configuration key="yEntrance" value="250"/>
+    <configuration key="xOutdoors" value="800"/>
+    <configuration key="yOutdoors" value="-150"/>
+  </providers>
+  <devices id="GESTURE_DEVICE" name="GESTURE_DEVICE">
+    <resources xsi:type="Context:GestureIR" id="GESTURE_DEVICE_GESTURE_IR" name="Gestikger&#xe4;t" place="//@places.1" modality="Haptic" personal="Kurt">
+      <position x="50.0" y="200.0" z="0.0"/>
+      <gestureRecognition id="GESTURE_DEVICE_GESTURE_IR_MIC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="GESTURE_DEVICE_GESTURE_IR"/>
+      </gestureRecognition>
+    </resources>
+  </devices>
+  <devices id="SHEM_TOUCH" name="SHEM_TOUCH">
+    <resources xsi:type="Context:Keyboard" id="SHEM_TOUCH_KEYBOARD" name="SHEM_TOUCH_KEYBOARD" place="//@places.0" modality="Haptic">
+      <position x="600.0" y="250.0" z="0.0"/>
+      <keys id="SHEM_TOUCH_KEYBOARD_MIC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="SHEM_TOUCH_KEYBOARD"/>
+      </keys>
+    </resources>
+    <resources xsi:type="Context:Touchscreen" id="SHEM_TOUCH_DISPLAY" name="Kleiner Touchscreen K&#xfc;che" place="//@places.0" xPixels="1024" yPixels="768" size="15">
+      <position x="600.0" y="250.0" z="0.0"/>
+      <screen id="SHEM_TOUCH_DISPLAY_GOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="SHEM_TOUCH_DISPLAY"/>
+      </screen>
+    </resources>
+  </devices>
+  <devices id="N800" name="N800">
+    <resources xsi:type="Context:Display" id="N800_DISPLAY" name="Mobiles Ger&#xe4;t" place="//@places.0" mobile="true" xPixels="800" yPixels="480" size="6">
+      <position x="750.0" y="250.0" z="0.0"/>
+      <screen id="N800_DISPLAY_GOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="N800_DISPLAY"/>
+      </screen>
+    </resources>
+    <resources xsi:type="Context:Keyboard" id="N800_KEYBOARD" name="N800_KEYBOARD" place="//@places.0" modality="Haptic" mobile="true">
+      <position x="750.0" y="250.0" z="0.0"/>
+      <keys id="N800_KEYBOARD_MIC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="N800_KEYBOARD"/>
+      </keys>
+    </resources>
+  </devices>
+  <devices id="WORKROOM" name="WORKROOM">
+    <resources xsi:type="Context:Display" id="WORKROOM_DISPLAY" name="Fernseher Arbeitszimmer" place="//@places.2" xPixels="1360" yPixels="768" size="32">
+      <position x="-100.0" y="100.0" z="0.0"/>
+      <screen id="WORKROOM_DISPLAY_GOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="WORKROOM_DISPLAY"/>
+      </screen>
+    </resources>
+    <resources xsi:type="Context:Keyboard" id="WORKROOM_KEYBOARD" name="WORKROOM_KEYBOARD" place="//@places.2" modality="Haptic">
+      <position x="-100.0" y="100.0" z="0.0"/>
+      <keys id="WORKROOM_KEYBOARD_MIC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="WORKROOM_KEYBOARD"/>
+      </keys>
+    </resources>
+  </devices>
+  <devices id="WORKROOM_DOOR" name="WORKROOM_DOOR">
+    <resources xsi:type="Context:Keyboard" id="WORKROOM_DOOR_KEYBOARD" name="WORKROOM_DOOR_KEYBOARD" place="//@places.2" modality="Haptic">
+      <position x="-100.0" y="300.0" z="0.0"/>
+      <keys id="WORKROOM_DOOR_KEYBOARD_MIC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="WORKROOM_DOOR_KEYBOARD"/>
+      </keys>
+    </resources>
+    <resources xsi:type="Context:Display" id="WORKROOM_DOOR_DISPLAY" name="Fernseher Studio" place="//@places.2" xPixels="1360" yPixels="768" size="32">
+      <position x="-100.0" y="300.0" z="0.0"/>
+      <screen id="WORKROOM_DOOR_GOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="WORKROOM_DOOR_DISPLAY"/>
+      </screen>
+    </resources>
+  </devices>
+  <devices id="1337" name="1337">
+    <resources xsi:type="Context:Loudspeaker" id="1337_LOUDSPEAKER" name="Lautsprecher K&#xfc;che" place="//@places.0" modality="Audio">
+      <position x="750.0" y="250.0" z="0.0"/>
+      <voice id="1337_LOUDSPEAKER_MOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="1337"/>
+      </voice>
+    </resources>
+  </devices>
+  <devices id="DELL_30" name="DELL_30">
+    <resources xsi:type="Context:Keyboard" id="DELL_30_KEYBOARD" name="DELL_30_KEYBOARD" place="//@places.1" modality="Haptic">
+      <position x="550.0" y="50.0" z="0.0"/>
+      <keys id="DELL_30_KEYBOARD_MIC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="DELL_30_KEYBOARD"/>
+      </keys>
+    </resources>
+    <resources xsi:type="Context:Display" id="DELL_30_DISPLAY" name="Bildschirm Wohnzimmerecke" place="//@places.1" xPixels="2560" yPixels="1600" size="30">
+      <position x="550.0" y="50.0" z="0.0"/>
+      <screen id="DELL_30_DISPLAY_GOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="DELL_30_DISPLAY"/>
+      </screen>
+    </resources>
+  </devices>
+  <devices id="1338" name="1338">
+    <resources xsi:type="Context:Loudspeaker" id="1338_LOUDSPEAKER" name="Lautsprecher Wohnzimmer" place="//@places.1" modality="Audio">
+      <position x="50.0" y="200.0" z="0.0"/>
+      <voice id="1338_LOUDSPEAKER_MOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="1338"/>
+      </voice>
+    </resources>
+  </devices>
+  <devices id="SHARP_65" name="SHARP_65">
+    <resources xsi:type="Context:Display" id="SHARP_65_DISPLAY" name="Fernseher Wohnzimmer" place="//@places.1" xPixels="1920" yPixels="1080" size="65">
+      <position x="50.0" y="200.0" z="0.0"/>
+      <screen id="SHARP_65_DISPLAY_GOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="SHARP_65_DISPLAY"/>
+      </screen>
+    </resources>
+    <resources xsi:type="Context:Keyboard" id="SHARP_65_KEYBOARD" name="SHARP_65_KEYBOARD" place="//@places.1" modality="Haptic">
+      <position x="50.0" y="200.0" z="0.0"/>
+      <keys id="SHARP_65_KEYBOARD_MIC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="SHARP_65_KEYBOARD"/>
+      </keys>
+    </resources>
+  </devices>
+  <devices id="KITCHEN" name="KITCHEN">
+    <resources xsi:type="Context:Touchscreen" id="KITCHEN_DISPLAY" name="Touchscreen K&#xfc;che" place="//@places.0" xPixels="1280" yPixels="1024" size="18">
+      <position x="750.0" y="250.0" z="0.0"/>
+      <screen id="KITCHEN_DISPLAY_GOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="KITCHEN_DISPLAY"/>
+      </screen>
+    </resources>
+    <resources xsi:type="Context:Keyboard" id="KITCHEN_KEYBOARD" name="KITCHEN_KEYBOARD" place="//@places.0" modality="Haptic">
+      <position x="750.0" y="250.0" z="0.0"/>
+      <keys id="KITCHEN_KEYBOARD_MIC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="KITCHEN_KEYBOARD"/>
+      </keys>
+    </resources>
+  </devices>
+  <devices id="DRAGON" name="DRAGON">
+    <resources xsi:type="Context:Microphone" id="DRAGON_MICROPHONE" name="Tragbares Mikrofon" place="//@places.0" modality="Vocal" personal="Kurt">
+      <position x="650.0" y="400.0" z="100.0"/>
+      <voiceRecognition id="DRAGON_MICROPHONE_MIC" name="" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="DRAGON"/>
+      </voiceRecognition>
+    </resources>
+  </devices>
+  <devices id="LIVING_ROOM_TOUCH" name="LIVING_ROOM_TOUCH">
+    <resources xsi:type="Context:Keyboard" id="LIVING_ROOM_TOUCH_KEYBOARD" name="Keyboard Touchscreen Wohnzimmer" place="//@places.1" modality="Haptic">
+      <position x="275.0" y="10.0" z="0.0"/>
+      <keys id="LIVING_ROOM_TOUCH_KEYBOARD_MIC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="LIVING_ROOM_TOUCH_KEYBOARD"/>
+      </keys>
+    </resources>
+    <resources xsi:type="Context:Touchscreen" id="LIVING_ROOM_TOUCH_DISPLAY" name="Touchscreen Wohnzimmer" place="//@places.1" xPixels="1024" yPixels="768" size="15">
+      <position x="275.0" y="10.0" z="0.0"/>
+      <screen id="LIVING_ROOM_TOUCH_DISPLAY_GOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="LIVING_ROOM_TOUCH_DISPLAY"/>
+      </screen>
+    </resources>
+  </devices>
+  <devices xsi:type="Context:Hood" id="HOOD" name="Hood" place="//@places.0" manufacturer="SIEMENS" modelName="LC69951">
+    <position x="850.0" y="500.0" z="200.0"/>
+    <subDevice xsi:type="Context:Lamp" id="Hood Light" name="Hood Light" place="//@places.0" manufacturer="SIEMENS" modelName="LC69951" lampType="DeviceLamp">
+      <on actor="//@serviceContainers.3/@services.4" sensor="//@serviceContainers.3/@services.0"/>
+      <powerUsage sensor="//@serviceContainers.3/@services.1"/>
+    </subDevice>
+    <subDevice xsi:type="Context:Fan" id="Hood Fan" name="Hood Fan" manufacturer="SIEMENS" modelName="LC69951">
+      <on actor="//@serviceContainers.3/@services.5" sensor="//@serviceContainers.3/@services.2"/>
+      <powerUsage sensor="//@serviceContainers.3/@services.3"/>
+      <speed actor="//@serviceContainers.3/@services.5" sensor="//@serviceContainers.3/@services.2" minimum="0.0" maximum="3.0"/>
+    </subDevice>
+  </devices>
+  <devices xsi:type="Context:Lamp" id="BLACK STANDING LAMP" name="Black Standing Lamp" place="//@places.1" manufacturer="KINGTEC" modelName="KTH-663" lampType="FloorLamp">
+    <position x="500.0" y="300.0" z="0.0"/>
+    <on actor="//@serviceContainers.17/@services.0/@services.1/@services.0" sensor="//@serviceContainers.17/@services.0/@services.1/@services.2"/>
+    <powerUsage sensor="//@serviceContainers.17/@services.0/@services.1/@services.2"/>
+  </devices>
+  <devices xsi:type="Context:Lamp" id="CEILING LIGHT KITCHEN" name="Ceiling Light Kitchen" place="//@places.0" manufacturer="Ivistar" lampType="CeilingLamp">
+    <position x="610.0" y="500.0" z="220.0"/>
+    <on actor="//@serviceContainers.9/@services.2" sensor="//@serviceContainers.9/@services.1"/>
+    <powerUsage sensor="//@serviceContainers.9/@services.0"/>
+    <dimmingLevel actor="//@serviceContainers.9/@services.2" sensor="//@serviceContainers.9/@services.1" minimum="0.0" maximum="100.0"/>
+  </devices>
+  <devices xsi:type="Context:TV" id="TV LIVING ROOM" name="TV Living Room" place="//@places.1" manufacturer="SHARP" modelName="LC-65GD1E">
+    <position x="50.0" y="300.0" z="100.0"/>
+    <on actor="//@serviceContainers.17/@services.0/@services.0/@services.0" sensor="//@serviceContainers.17/@services.0/@services.0/@services.2"/>
+    <powerUsage sensor="//@serviceContainers.17/@services.0/@services.0/@services.2"/>
+  </devices>
+  <devices xsi:type="Context:Oven" id="OVEN" name="Oven" place="//@places.0" manufacturer="SIEMENS">
+    <position x="850.0" y="400.0" z="50.0"/>
+    <on actor="//@serviceContainers.4/@services.4" sensor="//@serviceContainers.4/@services.2"/>
+    <powerUsage sensor="//@serviceContainers.4/@services.1"/>
+    <program actor="//@serviceContainers.4/@services.4" sensor="//@serviceContainers.4/@services.2"/>
+    <temperature actor="//@serviceContainers.4/@services.3" sensor="//@serviceContainers.4/@services.0"/>
+  </devices>
+  <devices xsi:type="Context:Lamp" id="WALLIGHT LIVING ROOM" name="Walllight Living Room" place="//@places.1" manufacturer="Ivistar" lampType="DeviceLamp">
+    <position x="150.0" y="50.0" z="150.0"/>
+    <on actor="//@serviceContainers.11/@services.2" sensor="//@serviceContainers.11/@services.1"/>
+    <powerUsage sensor="//@serviceContainers.11/@services.0"/>
+    <dimmingLevel actor="//@serviceContainers.11/@services.2" sensor="//@serviceContainers.11/@services.1" minimum="0.0" maximum="100.0"/>
+  </devices>
+  <devices xsi:type="Context:Lamp" id="CEILING LIGHT LIVING ROOM" name="Ceiling Light Living Room" place="//@places.1" manufacturer="Ivistar" lampType="CeilingLamp">
+    <position x="40.0" y="500.0" z="220.0"/>
+    <on actor="//@serviceContainers.10/@services.2" sensor="//@serviceContainers.10/@services.1"/>
+    <powerUsage sensor="//@serviceContainers.10/@services.0"/>
+    <dimmingLevel actor="//@serviceContainers.10/@services.2" sensor="//@serviceContainers.10/@services.1" minimum="0.0" maximum="100.0"/>
+  </devices>
+  <devices xsi:type="Context:Lamp" id="CEILING LIGHT OFFICE" name="Ceiling Light Office" place="//@places.2" manufacturer="Ivistar" lampType="CeilingLamp">
+    <position x="-260.0" y="500.0" z="220.0"/>
+    <on actor="//@serviceContainers.12/@services.2" sensor="//@serviceContainers.12/@services.1"/>
+    <powerUsage sensor="//@serviceContainers.12/@services.0"/>
+    <dimmingLevel actor="//@serviceContainers.12/@services.2" sensor="//@serviceContainers.12/@services.1" minimum="0.0" maximum="100.0"/>
+  </devices>
+  <devices id="iPad" name="iPad">
+    <resources xsi:type="Context:Touchscreen" id="iPad_DISPLAY" name="iPad_DISPLAY" personal="iPad-User" xPixels="1024" yPixels="768" size="10">
+      <screen id="iPad_DISPLAY_GOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="iPad_DISPLAY"/>
+      </screen>
+    </resources>
+    <resources xsi:type="Context:Keyboard" id="iPad_KEYBOARD" name="iPad_KEYBOARD" modality="Haptic" personal="iPad-User">
+      <keys id="iPad_KEYBOARD_MIC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="iPad_KEYBOARD"/>
+      </keys>
+    </resources>
+  </devices>
+  <devices id="KITCHEN_PHIDGET" name="KITCHEN_PHIDGET">
+    <resources xsi:type="Context:GestureIR" id="KITCHEN_PHIDGET_READER" name="KITCHEN_PHIDGET_READER">
+      <position x="750.0" y="250.0" z="0.0"/>
+      <gestureRecognition id="KITCHEN_PHIDGET_READER_GIR" name="KITCHEN_PHIDGET_READER_GIR" apiClass="org.sercho.masp.context.providers.location.rfid.RFIDMessageInputChannel">
+        <configuration key="ReaderID" value="89547"/>
+        <configuration key="Ip" value="192.168.1.80"/>
+        <configuration key="Port" value="5001"/>
+        <configuration key="EnableInteractionRequested" value="true"/>
+      </gestureRecognition>
+    </resources>
+  </devices>
+  <devices xsi:type="Context:Blind" id="OFFICE_BLIND" name="Office Blind" place="//@places.2" manufacturer="Ivistar">
+    <position x="-140.0" y="650.0" z="200.0"/>
+    <level actor="//@serviceContainers.13/@services.0/@services.1" sensor="//@serviceContainers.13/@services.0/@services.0" minimum="0.0" maximum="100.0"/>
+  </devices>
+  <devices xsi:type="Context:Blind" id="STUDIO_BLINDS_NORTH" name="Studio Blinds North" place="//@places.3" manufacturer="Ivistar">
+    <position x="-800.0" y="300.0" z="200.0"/>
+    <level actor="//@serviceContainers.15/@services.0/@services.15" sensor="//@serviceContainers.15/@services.0/@services.14" minimum="0.0" maximum="100.0"/>
+  </devices>
+  <devices xsi:type="Context:Blind" id="STUDIO_BLINDS_EAST" name="Studio Blinds East" place="//@places.3" manufacturer="Ivistar">
+    <position x="-600.0" y="650.0" z="200.0"/>
+    <level actor="//@serviceContainers.15/@services.0/@services.13" sensor="//@serviceContainers.15/@services.0/@services.12" minimum="0.0" maximum="100.0"/>
+  </devices>
+  <devices xsi:type="Context:Blind" id="LIVING_ROOM_BLINDS" name="Living Room Blinds" place="//@places.1" manufacturer="Ivistar">
+    <position x="300.0" y="650.0" z="200.0"/>
+    <level actor="//@serviceContainers.13/@services.1/@services.9" sensor="//@serviceContainers.13/@services.1/@services.8" minimum="0.0" maximum="100.0"/>
+  </devices>
+  <devices xsi:type="Context:TemperatureSensor" id="OfficeTemperatureSensor" name="OfficeTemperatureSensor" place="//@places.2" manufacturer="Phidgets">
+    <value sensor="//@serviceContainers.8/@services.0"/>
+  </devices>
+  <devices xsi:type="Context:TemperatureSensor" id="Phidget Kitchen" name="Phidget Kitchen" place="//@places.0" manufacturer="Phidgets">
+    <value sensor="//@serviceContainers.18/@services.1/@services.0"/>
+  </devices>
+  <devices xsi:type="Context:TemperatureSensor" id="Phidget Living Room" name="Phidget Living Room" place="//@places.1" manufacturer="Phidgets">
+    <value sensor="//@serviceContainers.18/@services.1/@services.1"/>
+  </devices>
+  <devices xsi:type="Context:TemperatureSensor" id="HealthRoomTemperatureSensor" name="HealthRoomTemperatureSensor" place="//@places.3">
+    <value sensor="//@serviceContainers.8/@services.1"/>
+  </devices>
+  <devices xsi:type="Context:LuminanceSensor" id="Kitchen Phidgets Luminance Sensor" name="Kitchen Phidgets Luminance Sensor" place="//@places.0">
+    <value sensor="//@serviceContainers.18/@services.0/@services.0" minimum="0.0"/>
+  </devices>
+  <devices xsi:type="Context:LuminanceSensor" id="Living Room Phidgets Luminance Sensor" name="Living Room Phidgets Luminance Sensor" place="//@places.1">
+    <value sensor="//@serviceContainers.18/@services.0/@services.1" minimum="0.0"/>
+  </devices>
+  <devices xsi:type="Context:LuminanceSensor" id="KitchenEIBLuminanceSensor" name="Kitchen EIB Luminance Sensor" place="//@places.0" manufacturer="SIEMENS" modelName="5WG1 252-4AB02">
+    <position x="895.0" y="610.0" z="220.0"/>
+    <value sensor="//@serviceContainers.17/@services.1/@services.0" minimum="0.0"/>
+  </devices>
+  <devices xsi:type="Context:LuminanceSensor" id="LivingRoomEIBLuminanceSensor" name="Living Room EIB Luminance Sensor" place="//@places.1" manufacturer="SIEMENS" modelName="5WG1 252-4AB02">
+    <position x="15.0" y="0.0" z="220.0"/>
+    <value sensor="//@serviceContainers.17/@services.1/@services.1" minimum="0.0"/>
+  </devices>
+  <devices xsi:type="Context:LuminanceSensor" id="OfficeEIBLuminanceSensor" name="Office EIB Luminance Sensor" place="//@places.2" manufacturer="SIEMENS" modelName="5WG1 252-4AB02">
+    <position x="-285.0" y="0.0" z="220.0"/>
+    <value sensor="//@serviceContainers.17/@services.1/@services.2" minimum="0.0"/>
+  </devices>
+  <devices xsi:type="Context:Radio" id="DEMO RADIO" name="Demo Radio" manufacturer="PHILIPS" modelName="WAC700/22">
+    <on actor="//@serviceContainers.17/@services.0/@services.2/@services.0" sensor="//@serviceContainers.17/@services.0/@services.2/@services.1"/>
+  </devices>
+  <devices xsi:type="Context:WaterStorageTank" id="S-501011" name="WaterStorageTank" capacity="200">
+    <subDevice xsi:type="Context:HeatingRod" id="S-501011H" name="WaterStorageTankHeatingRod" maximumPowerWatts="3000">
+      <on/>
+      <powerUsage actor="//@serviceContainers.0/@services.5" sensor="//@serviceContainers.0/@services.4"/>
+    </subDevice>
+    <temperatureSensor id="S-501011T" name="WaterStorageTankTemperatureSensor" manufacturer="">
+      <value actor="//@serviceContainers.0/@services.3" sensor="//@serviceContainers.0/@services.2"/>
+    </temperatureSensor>
+  </devices>
+  <users id="Kevin" name="Kevin" tags="//@providers.1/@tags.0" place="//@places.4" birthDate="12.04.1997" pastAssistants="//@assistants.7 //@assistants.1 //@assistants.4" installedAssistants="//@assistants.2 //@assistants.1 //@assistants.4 //@assistants.5">
+    <position x="750.0" y="-150.0" z="0.0"/>
+    <lineOfVision/>
+  </users>
+  <users id="Melanie" name="Melanie" tags="//@providers.1/@tags.1" place="//@places.4" birthDate="26.04.1971" leftHanded="true" pastAssistants="//@assistants.7 //@assistants.1 //@assistants.4" installedAssistants="//@assistants.2 //@assistants.1 //@assistants.4 //@assistants.5">
+    <position x="850.0" y="-150.0" z="0.0"/>
+    <lineOfVision/>
+  </users>
+  <users id="Kurt" name="Kurt" tags="//@providers.1/@tags.2" place="//@places.4" birthDate="05.06.1955" surname="" pastAssistants="//@assistants.7 //@assistants.5" installedAssistants="//@assistants.2 //@assistants.1 //@assistants.4 //@assistants.5" passwordHash="">
+    <position x="800.0" y="-150.0" z="0.0"/>
+    <lineOfVision/>
+  </users>
+  <users id="iPad-User" name="iPad" place="//@places.4" birthDate="1.1.1980" surname="" installedAssistants="//@assistants.2 //@assistants.1 //@assistants.5">
+    <position x="700.0" y="-150.0" z="0.0"/>
+    <lineOfVision/>
+  </users>
+  <assistants xsi:type="Context:ThirdPartyAssistant" id="org/sercho/masp/demos/HosShea.xml" name="Smart Home Energy Assistant" description="SHEA monitors the energy consumption of your devices." domain="Energy">
+    <activities name="Analyze energy consumption" description="Analyze energy consumption of your appliances"/>
+  </assistants>
+  <assistants xsi:type="Context:ThirdPartyAssistant" id="org/sercho/masp/demos/vcook/VirtualCook1280.xml" name="4 Star Cooking Assistant" pastUsers="//@users.1 //@users.0" description="The Cooking Assistant helps you finding recipes and guides you through the cooking steps." domain="Living">
+    <activities name="Cooking" description="Find your favourite recipe and cook it"/>
+    <connections description="Based on your personal training plan recipe recommendations will be made." connectedAssistant="//@assistants.3"/>
+  </assistants>
+  <assistants xsi:type="Context:ThirdPartyAssistant" id="org/sercho/masp/automatingassistant/model/AutomatingAssistant.xml" name="Concierge" description="The Concierge serves your comfort by automating daily routines." domain="Comfort"/>
+  <assistants xsi:type="Context:ThirdPartyAssistant" id="org/sercho/masp/demos/sha/ApplicationStarter.xml" name="Smart Health Assistant" description="The Smart Health Assistant helps you to create your personal, ideal training programme." domain="Living">
+    <activities name="Work out" description="Improve your fitness with training"/>
+    <connections description="Recipe recommendations based on personal training plan." connectedAssistant="//@assistants.1"/>
+  </assistants>
+  <assistants xsi:type="Context:ThirdPartyAssistant" id="org/sercho/masp/demos/spa/ApplicationStarter.xml" name="Smart Personal Assistant" pastUsers="//@users.1 //@users.0" description="Use the SPA to plan your spare time and find information in the semantic web." domain="Comfort"/>
+  <assistants xsi:type="Context:ThirdPartyAssistant" id="org/sercho/masp/demos/electriccar/model/ElectricCar.xml" name="Electric Scooter Assistant" pastUsers="//@users.2" description="The Electric Scooter Assistant optimizes the battery recharging process according to your preferences." domain="Energy"/>
+  <assistants xsi:type="Context:ThirdPartyAssistant" id="org/sercho/masp/demos/iptv/model/IPTV.xml" name="Smart Media Assistant" description="Watch TV with personal recommendations." domain="Living">
+    <activities name="Watch TV" description="Watch TV with personal recommendations."/>
+  </assistants>
+  <assistants xsi:type="Context:HomeOSAssistant" id="org/sercho/masp/demos/Lobby.xml" name="Lobby" pastUsers="//@users.0 //@users.2 //@users.1"/>
+  <assistants xsi:type="Context:HomeOSAssistant" id="org/sercho/masp/demos/metaui/MetaUI.xml" name="Meta UI"/>
+  <assistants xsi:type="Context:HomeOSAssistant" id="org/sercho/masp/demos/menu/model/MenuBar.xml" name="Menu Bar"/>
+  <assistants xsi:type="Context:HomeOSAssistant" id="org/sercho/masp/demos/assistantlauncher/model/AssistantLauncher.xml" name="Assistant Launcher"/>
+  <assistants xsi:type="Context:HomeOSAssistant" id="org/sercho/masp/demos/messagecenter/model/MessageCenter.xml" name="Message Center"/>
+  <assistants xsi:type="Context:HomeOSAssistant" id="org/sercho/masp/demos/hcc/model/HCC.xml" name="Home Control Center"/>
+  <assistants xsi:type="Context:HomeOSAssistant" id="org/sercho/masp/notification/notificationwithfeedback/Notification.xml" name="Notification" description="Notification Assistant shows high priority HomeOS messages"/>
+  <assistants xsi:type="Context:HomeOSAssistant" id="org/sercho/masp/demos/assistantStore/model/AssistantStore.xml" name="AssistantStore" description="Assistant Store for installing Assistants"/>
+  <serviceContainers id="DummyServices">
+    <services xsi:type="Properties:Sensor" id="temperatureSensor" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="0.2" key="InitialValue"/>
+      <configuration value="temperatureVariable" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="radiatorSensor" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="0.2" key="InitialValue"/>
+      <configuration value="radiatorVariable" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="waterStorageTemperatureSensor" properties="//@devices.36/@temperatureSensor/@value" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="30" key="InitialValue"/>
+      <configuration value="temperatureVariable" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Actor" id="waterStorageTemperatureActor" properties="//@devices.36/@temperatureSensor/@value" actorWrapperClassName="org.sercho.masp.models.Context.dummy.DummyActorWrapper">
+      <configuration value="35" key="InitialValue"/>
+      <configuration value="temperatureVariable" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="heatingRodPowerUsageSensor" properties="//@devices.36/@subDevice.0/@powerUsage" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="0.0" key="InitialValue"/>
+      <configuration value="currentPowerWatts" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Actor" id="heatingRodPowerUsageActor" properties="//@devices.36/@subDevice.0/@powerUsage" actorWrapperClassName="org.sercho.masp.models.Context.dummy.DummyActorWrapper">
+      <configuration value="3.0" key="InitialValue"/>
+      <configuration value="currentPowerWatts" key="VariableName"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="digitalSTROM 66">
+    <services xsi:type="Properties:Sensor" id="Light 66 Power Usage Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.digitalstrom.v1.DigitalSTROMLampPowerUsageSensor">
+      <configuration value="http://192.168.1.220" key="EndPointURL"/>
+      <configuration value="66" key="DeviceID"/>
+      <configuration value="25" key="PowerUsage"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Light 66 Dimming Level Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.digitalstrom.v1.DigitalSTROMLampSensor">
+      <configuration value="http://192.168.1.220" key="EndPointURL"/>
+      <configuration value="66" key="DeviceID"/>
+    </services>
+    <services xsi:type="Properties:Actor" id="Light 66 Dimming Level Actor" actorWrapperClassName="org.sercho.masp.models.Context.digitalstrom.v1.DigitalSTROMLampActor">
+      <configuration value="http://192.168.1.220" key="EndPointURL"/>
+      <configuration value="66" key="DeviceID"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="digitalSTROM 68">
+    <services xsi:type="Properties:Sensor" id="Light 68 Power Usage Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.digitalstrom.v1.DigitalSTROMLampPowerUsageSensor">
+      <configuration value="http://192.168.1.220" key="EndPointURL"/>
+      <configuration value="68" key="DeviceID"/>
+      <configuration value="95" key="PowerUsage"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Light 68 Dimming Level Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.digitalstrom.v1.DigitalSTROMLampSensor">
+      <configuration value="http://192.168.1.220" key="EndPointURL"/>
+      <configuration value="68" key="DeviceID"/>
+    </services>
+    <services xsi:type="Properties:Actor" id="Light 68 Dimming Level Actor" actorWrapperClassName="org.sercho.masp.models.Context.digitalstrom.v1.DigitalSTROMLampActor">
+      <configuration value="http://192.168.1.220" key="EndPointURL"/>
+      <configuration value="68" key="DeviceID"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="Extractor Hood">
+    <services xsi:type="Properties:Sensor" id="Hood Light Sensor" properties="//@devices.12/@subDevice.0/@on" sensorWrapperClassName="org.sercho.masp.models.Context.bsh.HoodLightSensor">
+      <configuration value="http://192.168.1.210:8080/sah-ws" key="EndPointURL"/>
+      <configuration value="hoodEHS.BSH_Hood.538022426" key="DeviceID"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Hood Light Power Usage Sensor" properties="//@devices.12/@subDevice.0/@powerUsage" sensorWrapperClassName="org.sercho.masp.models.Context.bsh.HoodLightPowerUsageSensor">
+      <configuration value="http://192.168.1.210:8080/sah-ws" key="EndPointURL"/>
+      <configuration value="hoodEHS.BSH_Hood.538022426" key="DeviceID"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Hood Fan Speed Sensor" properties="//@devices.12/@subDevice.1/@on //@devices.12/@subDevice.1/@speed" sensorWrapperClassName="org.sercho.masp.models.Context.bsh.HoodFanSpeedSensor">
+      <configuration value="http://192.168.1.210:8080/sah-ws" key="EndPointURL"/>
+      <configuration value="hoodEHS.BSH_Hood.538022426" key="DeviceID"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Hood Fan Power Usage Sensor" properties="//@devices.12/@subDevice.1/@powerUsage" sensorWrapperClassName="org.sercho.masp.models.Context.bsh.HoodFanPowerUsageSensor">
+      <configuration value="http://192.168.1.210:8080/sah-ws" key="EndPointURL"/>
+      <configuration value="hoodEHS.BSH_Hood.538022426" key="DeviceID"/>
+    </services>
+    <services xsi:type="Properties:Actor" id="Hood Light Actor" properties="//@devices.12/@subDevice.0/@on" actorWrapperClassName="org.sercho.masp.models.Context.bsh.HoodLightActor">
+      <configuration value="http://192.168.1.210:8080/sah-ws" key="EndPointURL"/>
+      <configuration value="hoodEHS.BSH_Hood.538022426" key="DeviceID"/>
+    </services>
+    <services xsi:type="Properties:Actor" id="Hood Fan Speed Actor" properties="//@devices.12/@subDevice.1/@on //@devices.12/@subDevice.1/@speed" actorWrapperClassName="org.sercho.masp.models.Context.bsh.HoodFanSpeedActor">
+      <configuration value="http://192.168.1.210:8080/sah-ws" key="EndPointURL"/>
+      <configuration value="hoodEHS.BSH_Hood.538022426" key="DeviceID"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="BSH Oven">
+    <services xsi:type="Properties:Sensor" id="Oven Temperature Sensor" properties="//@devices.16/@temperature" sensorWrapperClassName="org.sercho.masp.models.Context.bsh.OvenTemperatureSensor">
+      <configuration value="http://192.168.1.210:8080/sah-ws" key="EndPointURL"/>
+      <configuration value="intercookerEHS.BSH_Intercooker~ICHob.538022265" key="DeviceID"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Oven Power Usage Sensor" properties="//@devices.16/@powerUsage" sensorWrapperClassName="org.sercho.masp.models.Context.bsh.OvenPowerUsageSensor">
+      <configuration value="http://192.168.1.210:8080/sah-ws" key="EndPointURL"/>
+      <configuration value="intercookerEHS.BSH_Intercooker~ICHob.538022265" key="DeviceID"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Oven Heating Mode Sensor" properties="//@devices.16/@on //@devices.16/@program" sensorWrapperClassName="org.sercho.masp.models.Context.bsh.OvenHeatingModelSensor">
+      <configuration value="http://192.168.1.210:8080/sah-ws" key="EndPointURL"/>
+      <configuration value="intercookerEHS.BSH_Intercooker~ICHob.538022265" key="DeviceID"/>
+    </services>
+    <services xsi:type="Properties:Actor" id="Oven Temperature Actor" properties="//@devices.16/@temperature" actorWrapperClassName="org.sercho.masp.models.Context.bsh.OvenTemperatureActor">
+      <configuration value="http://192.168.1.210:8080/sah-ws" key="EndPointURL"/>
+      <configuration value="intercookerEHS.BSH_Intercooker~ICHob.538022265" key="DeviceID"/>
+    </services>
+    <services xsi:type="Properties:Actor" id="Oven Heating Mode Actor" properties="//@devices.16/@on //@devices.16/@program" actorWrapperClassName="org.sercho.masp.models.Context.bsh.OvenHeatingModelActor">
+      <configuration value="http://192.168.1.210:8080/sah-ws" key="EndPointURL"/>
+      <configuration value="intercookerEHS.BSH_Intercooker~ICHob.538022265" key="DeviceID"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="Bread machine">
+    <services xsi:type="Properties:Actor" id="Bread machine Power Status Actor" actorWrapperClassName="org.sercho.masp.models.Context.upnp.SetterActionActorWrapper">
+      <configuration value="Plugwise-000D6F000011F07F" key="UDN"/>
+      <configuration value="urn:upnp-org:serviceId:Switch" key="ServiceID"/>
+      <configuration value="SetTarget" key="ActionName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Bread machine Power Status Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.upnp.StateVariableSensorWrapper">
+      <configuration value="Plugwise-000D6F000011F07F" key="UDN"/>
+      <configuration value="urn:upnp-org:serviceId:Switch" key="ServiceID"/>
+      <configuration value="Status" key="StateVariable"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Bread machine Power Usage Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.upnp.StateVariableSensorWrapper">
+      <configuration value="Plugwise-000D6F000011F07F" key="UDN"/>
+      <configuration value="urn:upnp-org:serviceId:Sensor" key="ServiceID"/>
+      <configuration value="Value" key="StateVariable"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="Sharp 65">
+    <services xsi:type="Properties:Sensor" id="Sharp 65 Power Status Sensor" available="true" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="false" key="InitialValue"/>
+      <configuration value="Living Room TV Power Status" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Sharp 65 Power Usage Sensor" available="true" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="0" key="InitialValue"/>
+      <configuration value="Living Room TV Power Usage" key="VariableName"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="Kitchen Cabinet Display">
+    <services xsi:type="Properties:Sensor" id="Kitchen Cabinet Display Power Status Sensor" available="true" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="true" key="InitialValue"/>
+      <configuration value="Health Room TV Power Status" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Kitchen Cabinet Display Power Usage Sensor" available="true" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="30" key="InitialValue"/>
+      <configuration value="Health Room TV Power Usage" key="VariableName"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="TemperatureSensors">
+    <services xsi:type="Properties:Sensor" id="OfficeTemperatureSensor" properties="//@devices.26/@value" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="22" key="InitialValue"/>
+      <configuration value="OfficeRoomTemperature" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="HealthRoomTemperatureSensor" properties="//@devices.29/@value" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="22" key="InitialValue"/>
+      <configuration value="HealthRoomTemperature" key="VariableName"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="IvistarLightKitchen">
+    <services xsi:type="Properties:Sensor" id="IvistarKitchenLightPowerUsageSensor" properties="//@devices.14/@powerUsage" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarLightPowerUsageSensor">
+      <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+      <configuration value="11" key="DeviceID"/>
+      <configuration value="28" key="RoomLine"/>
+      <configuration value="80" key="PowerUsage"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="IvistarKitchenLightStatusSensor" properties="//@devices.14/@on //@devices.14/@dimmingLevel" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarLevelSensor">
+      <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+      <configuration value="11" key="DeviceID"/>
+      <configuration value="28" key="RoomLine"/>
+    </services>
+    <services xsi:type="Properties:Actor" id="IvistarKitchenLightStatusActor" properties="//@devices.14/@on //@devices.14/@dimmingLevel" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarLevelActor">
+      <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+      <configuration value="11" key="DeviceID"/>
+      <configuration value="28" key="RoomLine"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="IvistarLivingRoomCeiling">
+    <services xsi:type="Properties:Sensor" id="IvistarLivingRoomCeilingLightPowerUsageSensor" properties="//@devices.18/@powerUsage" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarLightPowerUsageSensor">
+      <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+      <configuration value="10" key="DeviceID"/>
+      <configuration value="34" key="RoomLine"/>
+      <configuration value="40" key="PowerUsage"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="IvistarLivingRoomCeilingLightStatusSensor" properties="//@devices.18/@on //@devices.18/@dimmingLevel" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarLevelSensor">
+      <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+      <configuration value="10" key="DeviceID"/>
+      <configuration value="34" key="RoomLine"/>
+    </services>
+    <services xsi:type="Properties:Actor" id="IvistarLivingRoomCeilingLightStatusActor" properties="//@devices.18/@on //@devices.18/@dimmingLevel" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarLevelActor">
+      <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+      <configuration value="10" key="DeviceID"/>
+      <configuration value="34" key="RoomLine"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="IvistarLivingRoomWall">
+    <services xsi:type="Properties:Sensor" id="IvistarLivingRoomWallLightPowerUsageSensor" properties="//@devices.17/@powerUsage" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarLightPowerUsageSensor">
+      <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+      <configuration value="10" key="DeviceID"/>
+      <configuration value="37" key="RoomLine"/>
+      <configuration value="150" key="PowerUsage"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="IvistarLivingRoomWallLightStatusSensor" properties="//@devices.17/@on //@devices.17/@dimmingLevel" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarLevelSensor">
+      <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+      <configuration value="10" key="DeviceID"/>
+      <configuration value="37" key="RoomLine"/>
+    </services>
+    <services xsi:type="Properties:Actor" id="IvistarLivingRoomWallLightStatusActor" properties="//@devices.17/@on //@devices.17/@dimmingLevel" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarLevelActor">
+      <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+      <configuration value="10" key="DeviceID"/>
+      <configuration value="37" key="RoomLine"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="IvistarOfficeCeiling">
+    <services xsi:type="Properties:Sensor" id="IvistarOfficeCeilingLightPowerUsageSensor" properties="//@devices.19/@powerUsage" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarLightPowerUsageSensor">
+      <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+      <configuration value="10" key="DeviceID"/>
+      <configuration value="28" key="RoomLine"/>
+      <configuration value="60" key="PowerUsage"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="IvistarOfficeCeilingLightStatusSensor" properties="//@devices.19/@on //@devices.19/@dimmingLevel" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarLevelSensor">
+      <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+      <configuration value="10" key="DeviceID"/>
+      <configuration value="28" key="RoomLine"/>
+    </services>
+    <services xsi:type="Properties:Actor" id="IvistarOfficeCeilingLightStatusActor" properties="//@devices.19/@on //@devices.19/@dimmingLevel" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarLevelActor">
+      <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+      <configuration value="10" key="DeviceID"/>
+      <configuration value="28" key="RoomLine"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="IvistarLivingRoom">
+    <services xsi:type="Properties:ServiceContainer" id="IvistarOfficeBlinds">
+      <services xsi:type="Properties:Sensor" id="IvistarOfficeBlindSensor" properties="//@devices.22/@level" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelSensor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="10" key="DeviceID"/>
+        <configuration value="92" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Actor" id="IvistarOfficeBlindActor" properties="//@devices.22/@level" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelActor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="10" key="DeviceID"/>
+        <configuration value="92" key="RoomLine"/>
+      </services>
+    </services>
+    <services xsi:type="Properties:ServiceContainer" id="IvistarLivingRoomBlinds">
+      <services xsi:type="Properties:Sensor" id="IvistarLivingRoomBlind1Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelSensor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="10" key="DeviceID"/>
+        <configuration value="93" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Actor" id="IvistarLivingRoomBlind1Actor" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelActor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="10" key="DeviceID"/>
+        <configuration value="93" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Sensor" id="IvistarLivingRoomBlind2Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelSensor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="10" key="DeviceID"/>
+        <configuration value="94" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Actor" id="IvistarLivingRoomBlind2Actor" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelActor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="10" key="DeviceID"/>
+        <configuration value="94" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Sensor" id="IvistarLivingRoomBlind3Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelSensor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="10" key="DeviceID"/>
+        <configuration value="95" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Actor" id="IvistarLivingRoomBlind3Actor" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelActor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="10" key="DeviceID"/>
+        <configuration value="95" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Sensor" id="IvistarLivingRoomBlind4Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelSensor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="10" key="DeviceID"/>
+        <configuration value="96" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Actor" id="IvistarLivingRoomBlind4Actor" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelActor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="10" key="DeviceID"/>
+        <configuration value="96" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Sensor" id="IvistarLivingRoomBlindsSensor" properties="//@devices.25/@level" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelMultiSensor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="10" key="DeviceID"/>
+        <configuration value="93,94,95,96" key="RoomLines"/>
+      </services>
+      <services xsi:type="Properties:Actor" id="IvistarLivingRoomBlindsActor" properties="//@devices.25/@level" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelMultiActor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="10" key="DeviceID"/>
+        <configuration value="93,94,95,96" key="RoomLines"/>
+      </services>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="IvistarKitchen">
+    <services xsi:type="Properties:ServiceContainer" id="IvistarKitchenBlinds">
+      <services xsi:type="Properties:Sensor" id="IvistarKitchenBlind1Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelSensor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="11" key="DeviceID"/>
+        <configuration value="97" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Actor" id="IvistarKitchenBlind1Actor" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelActor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="11" key="DeviceID"/>
+        <configuration value="97" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Sensor" id="IvistarKitchenBlind2Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelSensor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="11" key="DeviceID"/>
+        <configuration value="98" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Actor" id="IvistarKitchenBlind2Actor" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelActor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="11" key="DeviceID"/>
+        <configuration value="98" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Sensor" id="IvistarKitchenBlindsSensor" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelMultiSensor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="11" key="DeviceID"/>
+        <configuration value="97,98" key="RoomLines"/>
+      </services>
+      <services xsi:type="Properties:Actor" id="IvistarKitchenBlindsActor" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelMultiActor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="11" key="DeviceID"/>
+        <configuration value="97,98" key="RoomLines"/>
+      </services>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="IvistarStudio">
+    <services xsi:type="Properties:ServiceContainer" id="IvistarStudioBlinds">
+      <services xsi:type="Properties:Sensor" id="IvistarStudioBlindNorth1Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelSensor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="13" key="DeviceID"/>
+        <configuration value="92" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Actor" id="IvistarStudioBlindNorth1Actor" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelActor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="13" key="DeviceID"/>
+        <configuration value="92" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Sensor" id="IvistarStudioBlindNorth2Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelSensor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="13" key="DeviceID"/>
+        <configuration value="93" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Actor" id="IvistarStudioBlindNorth2Actor" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelActor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="13" key="DeviceID"/>
+        <configuration value="93" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Sensor" id="IvistarStudioBlindNorth3Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelSensor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="13" key="DeviceID"/>
+        <configuration value="94" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Actor" id="IvistarStudioBlindNorth3Actor" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelActor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="13" key="DeviceID"/>
+        <configuration value="94" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Sensor" id="IvistarStudioBlindEast1Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelSensor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="13" key="DeviceID"/>
+        <configuration value="95" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Actor" id="IvistarStudioBlindEast1Actor" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelActor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="13" key="DeviceID"/>
+        <configuration value="95" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Sensor" id="IvistarStudioBlindEast2Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelSensor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="13" key="DeviceID"/>
+        <configuration value="96" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Actor" id="IvistarStudioBlindEast2Actor" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelActor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="13" key="DeviceID"/>
+        <configuration value="96" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Sensor" id="IvistarStudioBlindEast3Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelSensor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="13" key="DeviceID"/>
+        <configuration value="97" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Actor" id="IvistarStudioBlindEast3Actor" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelActor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="13" key="DeviceID"/>
+        <configuration value="97" key="RoomLine"/>
+      </services>
+      <services xsi:type="Properties:Sensor" id="IvistarStudioBlindsEastSensor" properties="//@devices.24/@level" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelMultiSensor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="13" key="DeviceID"/>
+        <configuration value="95,96,97" key="RoomLines"/>
+      </services>
+      <services xsi:type="Properties:Actor" id="IvistarStudioBlindsEastActor" properties="//@devices.24/@level" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelMultiActor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="13" key="DeviceID"/>
+        <configuration value="95,96,97" key="RoomLines"/>
+      </services>
+      <services xsi:type="Properties:Sensor" id="IvistarStudioBlindsNorthSensor" properties="//@devices.23/@level" sensorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelMultiSensor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="13" key="DeviceID"/>
+        <configuration value="92,93,94" key="RoomLines"/>
+      </services>
+      <services xsi:type="Properties:Actor" id="IvistarStudioBlindsNorthActor" properties="//@devices.23/@level" actorWrapperClassName="org.sercho.masp.models.Context.ivistar.IvistarBlindLevelMultiActor">
+        <configuration value="http://192.168.1.230/action/vroomctrl_config?login=root&amp;passwd=root&amp;simple=true" key="EndPointURL"/>
+        <configuration value="13" key="DeviceID"/>
+        <configuration value="92,93,94" key="RoomLines"/>
+      </services>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="SmartMeterService">
+    <services xsi:type="Properties:Sensor" id="SmartMeterSensor" properties="//@meters.0/@readings.0/@value" sensorWrapperClassName="org.sercho.masp.models.Context.EMH.PowerSensor">
+      <configuration value="1000" key="period"/>
+      <configuration value="192.168.1.50" key="host"/>
+      <configuration value="7259" key="port"/>
+      <configuration value="06454d4801001d42af57" key="serverId"/>
+      <configuration value="kunde" key="username"/>
+      <configuration value="kunde" key="password"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="EIB">
+    <services xsi:type="Properties:ServiceContainer" id="EIB Power Plugs">
+      <services xsi:type="Properties:ServiceContainer" id="EIB 19">
+        <services xsi:type="Properties:Actor" id="0/1/19 Power Status Actor" properties="//@devices.15/@on" actorWrapperClassName="org.sercho.masp.models.Context.upnp.SetterActionActorWrapper">
+          <configuration value="uuid:EIBUPnPBridge-192.168.1.14" key="UDN"/>
+          <configuration value="urn:dai-labor:serviceId:EIBDataPoint-0/1/19" key="ServiceID"/>
+          <configuration value="SetValue" key="ActionName"/>
+        </services>
+        <services xsi:type="Properties:Sensor" id="0/1/19 Power Status Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.upnp.DPTSensorWrapper">
+          <configuration value="uuid:EIBUPnPBridge-192.168.1.14" key="UDN"/>
+          <configuration value="urn:dai-labor:serviceId:EIBDataPoint-0/1/19" key="ServiceID"/>
+          <configuration value="Value" key="StateVariable"/>
+        </services>
+        <services xsi:type="Properties:Sensor" id="0/0/19 Power Usage Sensor" properties="//@devices.15/@powerUsage //@devices.15/@on" sensorWrapperClassName="org.sercho.masp.models.Context.upnp.DPTSensorWrapper">
+          <configuration value="uuid:EIBUPnPBridge-192.168.1.14" key="UDN"/>
+          <configuration value="urn:dai-labor:serviceId:EIBDataPoint-0/0/19" key="ServiceID"/>
+          <configuration value="Value" key="StateVariable"/>
+          <configuration value="23.0" key="Scale"/>
+        </services>
+      </services>
+      <services xsi:type="Properties:ServiceContainer" id="EIB 14">
+        <services xsi:type="Properties:Actor" id="0/1/14 Power Status Actor" properties="//@devices.13/@on" actorWrapperClassName="org.sercho.masp.models.Context.upnp.SetterActionActorWrapper">
+          <configuration value="uuid:EIBUPnPBridge-192.168.1.14" key="UDN"/>
+          <configuration value="urn:dai-labor:serviceId:EIBDataPoint-0/1/14" key="ServiceID"/>
+          <configuration value="SetValue" key="ActionName"/>
+        </services>
+        <services xsi:type="Properties:Sensor" id="0/1/14 Power Status Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.upnp.DPTSensorWrapper">
+          <configuration value="uuid:EIBUPnPBridge-192.168.1.14" key="UDN"/>
+          <configuration value="urn:dai-labor:serviceId:EIBDataPoint-0/1/14" key="ServiceID"/>
+          <configuration value="Value" key="StateVariable"/>
+        </services>
+        <services xsi:type="Properties:Sensor" id="0/0/14 Power Usage Sensor" properties="//@devices.13/@powerUsage //@devices.13/@on" sensorWrapperClassName="org.sercho.masp.models.Context.upnp.DPTSensorWrapper">
+          <configuration value="uuid:EIBUPnPBridge-192.168.1.14" key="UDN"/>
+          <configuration value="urn:dai-labor:serviceId:EIBDataPoint-0/0/14" key="ServiceID"/>
+          <configuration value="Value" key="StateVariable"/>
+          <configuration value="23.0" key="Scale"/>
+        </services>
+      </services>
+      <services xsi:type="Properties:ServiceContainer" id="EIB 15">
+        <services xsi:type="Properties:Actor" id="0/1/15 Power Status Actor" properties="//@devices.35/@on" actorWrapperClassName="org.sercho.masp.models.Context.upnp.SetterActionActorWrapper">
+          <configuration value="uuid:EIBUPnPBridge-192.168.1.14" key="UDN"/>
+          <configuration value="urn:dai-labor:serviceId:EIBDataPoint-0/1/15" key="ServiceID"/>
+          <configuration value="SetValue" key="ActionName"/>
+        </services>
+        <services xsi:type="Properties:Sensor" id="0/1/15 Power Status Sensor" properties="//@devices.35/@on" sensorWrapperClassName="org.sercho.masp.models.Context.upnp.DPTSensorWrapper">
+          <configuration value="uuid:EIBUPnPBridge-192.168.1.14" key="UDN"/>
+          <configuration value="urn:dai-labor:serviceId:EIBDataPoint-0/1/15" key="ServiceID"/>
+          <configuration value="Value" key="StateVariable"/>
+        </services>
+        <services xsi:type="Properties:Sensor" id="0/0/15 Power Usage Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.upnp.DPTSensorWrapper">
+          <configuration value="uuid:EIBUPnPBridge-192.168.1.14" key="UDN"/>
+          <configuration value="urn:dai-labor:serviceId:EIBDataPoint-0/0/15" key="ServiceID"/>
+          <configuration value="Value" key="StateVariable"/>
+          <configuration value="23.0" key="Scale"/>
+        </services>
+      </services>
+    </services>
+    <services xsi:type="Properties:ServiceContainer" id="EIB Luminance">
+      <services xsi:type="Properties:Sensor" id="1/0/0 Luminance Sensor" properties="//@devices.32/@value" sensorWrapperClassName="org.sercho.masp.models.Context.upnp.DPTSensorWrapper">
+        <configuration value="uuid:EIBUPnPBridge-192.168.1.14" key="UDN"/>
+        <configuration value="urn:dai-labor:serviceId:EIBDataPoint-1/0/0" key="ServiceID"/>
+        <configuration value="Value" key="StateVariable"/>
+      </services>
+      <services xsi:type="Properties:Sensor" id="1/1/0 Luminance Sensor" properties="//@devices.33/@value" sensorWrapperClassName="org.sercho.masp.models.Context.upnp.DPTSensorWrapper">
+        <configuration value="uuid:EIBUPnPBridge-192.168.1.14" key="UDN"/>
+        <configuration value="urn:dai-labor:serviceId:EIBDataPoint-1/1/0" key="ServiceID"/>
+        <configuration value="Value" key="StateVariable"/>
+      </services>
+      <services xsi:type="Properties:Sensor" id="1/2/0 Luminance Sensor" properties="//@devices.34/@value" sensorWrapperClassName="org.sercho.masp.models.Context.upnp.DPTSensorWrapper">
+        <configuration value="uuid:EIBUPnPBridge-192.168.1.14" key="UDN"/>
+        <configuration value="urn:dai-labor:serviceId:EIBDataPoint-1/2/0" key="ServiceID"/>
+        <configuration value="Value" key="StateVariable"/>
+      </services>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="Phidgets">
+    <services xsi:type="Properties:ServiceContainer" id="Luminance Sensors">
+      <services xsi:type="Properties:Sensor" id="Phidget Luminance Sensor Kitchen" properties="//@devices.30/@value" sensorWrapperClassName="org.sercho.masp.models.Context.phidgets.InterfaceKitSensor">
+        <configuration value="192.168.1.80" key="Ip"/>
+        <configuration value="5001" key="Port"/>
+        <configuration value="0" key="SPort"/>
+        <configuration value="113998" key="SerialID"/>
+      </services>
+      <services xsi:type="Properties:Sensor" id="Phidget Luminance Sensor Living Room" properties="//@devices.31/@value" sensorWrapperClassName="org.sercho.masp.models.Context.phidgets.InterfaceKitSensor">
+        <configuration value="192.168.1.81" key="Ip"/>
+        <configuration value="5001" key="Port"/>
+        <configuration value="0" key="SPort"/>
+        <configuration value="46873" key="SerialID"/>
+      </services>
+    </services>
+    <services xsi:type="Properties:ServiceContainer" id="Temperature Sensors">
+      <services xsi:type="Properties:Sensor" id="Phidget Temperature Sensor Kitchen" properties="//@devices.27/@value" sensorWrapperClassName="org.sercho.masp.models.Context.phidgets.InterfaceKitSensor">
+        <configuration value="192.168.1.80" key="Ip"/>
+        <configuration value="5001" key="Port"/>
+        <configuration value="1" key="SPort"/>
+        <configuration value="113998" key="SerialID"/>
+        <configuration value="((x*0.2222)+-61.1111)" key="ScaleFunction"/>
+      </services>
+      <services xsi:type="Properties:Sensor" id="Phidget Temperature Sensor Living Room" properties="//@devices.28/@value" sensorWrapperClassName="org.sercho.masp.models.Context.phidgets.InterfaceKitSensor">
+        <configuration value="192.168.1.81" key="Ip"/>
+        <configuration value="5001" key="Port"/>
+        <configuration value="1" key="SPort"/>
+        <configuration value="46873" key="SerialID"/>
+        <configuration value="((x*0.2222)+-61.1111)" key="ScaleFunction"/>
+      </services>
+    </services>
+  </serviceContainers>
+  <meters id="SMART METER" name="Smart Meter">
+    <readings subject="Electricity" measurementMethod="Meter Reading">
+      <value sensor="//@serviceContainers.16/@services.0"/>
+    </readings>
+  </meters>
+</Context:Environment>

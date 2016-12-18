@@ -1,0 +1,29 @@
+# Exported from Wings 3D 1.4.1
+newmtl HeaterDown
+Ns 100.0
+d 1.0
+illum 2
+Kd 1.0 1.0 1.0
+Ka 0.001 0.001 0.001
+Ks 0.51382 0.51382 0.51382
+Ke 0.001 0.001 0.001
+map_Kd Heater.png
+
+newmtl HeaterUp
+Ns 100.0
+d 1.0
+illum 2
+Kd 0.6603399999999999 0.6603399999999999 0.6603399999999999
+Ka 0.001 0.001 0.001
+Ks 0.50716 0.50716 0.50716
+Ke 0.001 0.001 0.001
+
+newmtl default2
+Ns 100.0
+d 1.0
+illum 2
+Kd 1.0 1.0 1.0
+Ka 0.2 0.2 0.2
+Ks 1.0 1.0 1.0
+Ke 0.0 0.0 0.0
+

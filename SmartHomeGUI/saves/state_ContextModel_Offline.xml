@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Home name="showroom">
+  <globalMatrix>-859.41547;0.0;-414.8047;6692.7734;0.0;-954.2868;0.0;-1465.1545;414.8047;0.0;-859.41547;-1602.5924;0.0;0.0;0.0;1.0</globalMatrix>
+  <Item id="WALLIGHT LIVING ROOM">
+    <globalMatrix>-89.57236;0.0;-104.02474;3215.5056;0.0;-137.27531;0.0;-1078.5076;104.02474;0.0;-89.57236;-1987.3787;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>2</variant>
+  </Item>
+  <Item id="S-501011H">
+    <globalMatrix>-36.3734;0.0;-42.24203;3882.1477;0.0;-55.744423;0.0;-3.7930908;42.24203;0.0;-36.3734;-1470.1901;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>0</variant>
+  </Item>
+  <Item id="CEILING LIGHT LIVING ROOM">
+    <globalMatrix>-133.4025;0.0;-154.92566;3882.1633;0.0;-204.4465;0.0;-1857.3783;154.92566;0.0;-133.4025;-1470.2051;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>2</variant>
+  </Item>
+  <Item id="OVEN">
+    <globalMatrix>719.51447;0.0;342.52478;-1274.6165;0.0;-796.8862;0.0;-290.79602;-342.52478;0.0;719.51447;1207.2021;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>0</variant>
+  </Item>
+  <Item id="LIVING_ROOM_BLINDS">
+    <globalMatrix>-105.481155;0.0;-52.83252;5230.619;0.0;-117.974655;0.0;-807.47345;52.83252;0.0;-105.481155;-721.2616;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>1</variant>
+  </Item>
+  <Item id="BLACK STANDING LAMP">
+    <globalMatrix>-162.41264;0.0;-188.61641;2216.4275;0.0;-248.90622;0.0;-572.58026;188.61641;0.0;-162.41264;-669.52014;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>1</variant>
+  </Item>
+  <Item id="OFFICE_BLIND">
+    <globalMatrix>-58.22288;0.0;-30.929834;8220.5625;0.0;-65.92962;0.0;-1023.501;30.929834;0.0;-58.22288;-1952.7673;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>1</variant>
+  </Item>
+  <Item id="HOOD">
+    <globalMatrix>939.8673;0.0;339.0982;-1286.4246;0.0;-999.17554;0.0;-1737.698;-339.0982;0.0;939.8673;1272.4338;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>0</variant>
+  </Item>
+  <Item id="TV LIVING ROOM">
+    <globalMatrix>370.36417;0.0;185.15886;5910.8916;0.0;-414.07098;0.0;-1347.5366;-185.15886;0.0;370.36417;-2712.063;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>0</variant>
+  </Item>
+  <Item id="CEILING LIGHT KITCHEN">
+    <globalMatrix>-261.92657;0.0;-304.1863;-328.18607;0.0;-401.4166;0.0;-1733.2528;304.1863;0.0;-261.92657;351.19086;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>2</variant>
+  </Item>
+  <Item id="STUDIO_BLINDS_EAST">
+    <globalMatrix>-104.00849;0.0;-49.060238;12382.28;0.0;-115.00044;0.0;-940.2589;49.060238;0.0;-104.00849;-4266.607;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>1</variant>
+  </Item>
+  <Item id="CEILING LIGHT OFFICE">
+    <globalMatrix>-261.92657;0.0;-304.1863;7829.9507;0.0;-401.4166;0.0;-2972.3274;304.1863;0.0;-261.92657;-2346.3599;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>2</variant>
+  </Item>
+  <Item id="STUDIO_BLINDS_NORTH">
+    <globalMatrix>25.160091;0.0;-60.93892;13509.934;0.0;-65.92962;0.0;-1223.8701;60.93892;0.0;25.160091;-6230.773;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>0</variant>
+  </Item>
+  <Item id="S-501011">
+    <globalMatrix>-323.64615;0.0;-156.21092;2338.3228;0.0;-359.3741;0.0;-3.8689365;156.21092;0.0;-323.64615;-2799.5205;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>0</variant>
+  </Item>
+  <Item id="DEMO RADIO">
+    <globalMatrix>-111.88347;0.0;45.52281;2143.3984;0.0;-120.79066;0.0;-816.20166;-45.52281;0.0;-111.88347;211.06677;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>0</variant>
+  </Item>
+</Home>
+

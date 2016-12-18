@@ -1,0 +1,14 @@
+TODOs ========================================================================================
+
+- Positionen automatisch auslesen (reinschreiben kannst du erst einmal weglassen)
+
+- 3 Zustaende fuer das Rollo: <= 25% ganz klein (also oben), 25% > x < 75% Mittelstellung und >= 75% Rollo unten (evtl. ist die Prozentangabe im Kontextmodell auch genau anders herum, also dass 100% gleich oben/eingefahren heisst.)
+
+-Textbreiten bei Buttons etc cutten
+
+ADDITIONAL TODOs =============================================================================
+
+FRAGEN: ======================================================================================
+
+
+BUGS: ========================================================================================

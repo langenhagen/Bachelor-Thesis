@@ -1,0 +1,39 @@
+package home.homeScene;
+
+import org.mt4j.MTApplication;
+
+import scenes.AbstractLoadScene;
+
+
+/**
+ * This class represents a dialog that loads a smart home.
+ * 
+ * @version 20120515
+ * @author langenhagen
+ */
+public class LoadHomeDialog extends AbstractLoadScene {
+
+	/**
+	 * Main Constructor<br>.
+	 * 
+	 * @param mtApp
+	 * The corresponding application as an <i>MTApplication</i>.
+	 * @param name
+	 * The name of the scene as a String.
+	 * @param filename the complete path to the file to load as a <i>String</i>.
+	 */
+	public LoadHomeDialog(MTApplication mtApp, String name, String filename) {
+		super(mtApp, name, filename);
+	}
+
+	/* (non-Javadoc)
+	 * @see void home.homeScene.LoadHomeDialog.btnLoadTappedHelper()
+	 */
+	@Override
+	protected void btnLoadTappedHelper() {
+		
+		getMTApplication().changeScene( new HomeScene( getMTApplication(), "Home Scene", txtCurrentChoice.getText()));
+
+	}
+
+}

@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Context:Environment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Context="http://www.dai-labor.de/~masp/Context-1.3.ecore" xmlns:Properties="http://www.dai-labor.de/~masp/Properties.ecore" initialAssistant="//@assistants.9">
+  <places xsi:type="Context:Room" id="KITCHEN" name="Kitchen" elements="//@devices.12 //@devices.13 //@devices.14 //@devices.0/@resources.0 //@devices.1/@resources.0 //@devices.1/@resources.1 //@devices.2/@resources.0 //@devices.2/@resources.1 //@devices.5/@resources.0 //@devices.9/@resources.0 //@devices.9/@resources.1 //@devices.10/@resources.0 //@users.0 //@users.1 //@devices.19">
+    <areas>
+      <origin x="580.0" y="-100.0" z="0.0"/>
+      <span x="330.0" y="810.0" z="220.0"/>
+    </areas>
+    <doors id="KITCHEN ENTRANCE" name="Kitchen Entrance" target="//@places.4">
+      <position x="733.0" y="-100.0" z="0.0"/>
+      <open/>
+      <span x="80.0" y="0.0" z="200.0"/>
+    </doors>
+    <doors id="KITCHEN LIVING ROOM" name="Kitchen Living Room" target="//@places.1">
+      <position x="580.0" y="125.0" z="0.0"/>
+      <open/>
+      <span x="0.0" y="120.0" z="200.0"/>
+    </doors>
+  </places>
+  <places xsi:type="Context:Room" id="LIVING_ROOM" name="Living Room" elements="//@devices.16 //@devices.15 //@devices.11/@resources.0 //@devices.11/@resources.1 //@devices.8/@resources.1 //@devices.8/@resources.0 //@devices.7/@resources.0 //@devices.6/@resources.0 //@devices.6/@resources.1 //@users.2 //@devices.20">
+    <areas>
+      <origin x="0.0" y="-100.0" z="0.0"/>
+      <span x="580.0" y="810.0" z="220.0"/>
+    </areas>
+    <doors id="LIVING ROOM ENTRANCE" name="Living Room Entrance" target="//@places.4">
+      <position x="316.0" y="-100.0" z="0.0"/>
+      <open/>
+      <span x="100.0" y="0.0" z="200.0"/>
+    </doors>
+    <doors id="LIVING ROOM OFFICE" name="Living Room Office" target="//@places.2">
+      <position x="0.0" y="540.0" z="0.0"/>
+      <open/>
+      <span x="0.0" y="120.0" z="200.0"/>
+    </doors>
+  </places>
+  <places xsi:type="Context:Room" id="WORKROOM" name="Office" elements="//@devices.4/@resources.1 //@devices.4/@resources.0 //@devices.3/@resources.1 //@devices.3/@resources.0 //@devices.21">
+    <areas>
+      <origin x="-300.0" y="-100.0" z="0.0"/>
+      <span x="300.0" y="810.0" z="220.0"/>
+    </areas>
+    <doors id="OFFICE STUDIO" name="Office Studio" target="//@places.3">
+      <position/>
+      <open/>
+      <span/>
+    </doors>
+  </places>
+  <places xsi:type="Context:Room" id="HEALTH ROOM" name="Health Room" elements="//@devices.17 //@devices.22">
+    <areas>
+      <origin/>
+      <span/>
+    </areas>
+    <doors id="Health Room Flur" name="HEALTH ROOM FLUR" target="//@places.4">
+      <position/>
+      <open/>
+      <span/>
+    </doors>
+  </places>
+  <places xsi:type="Context:Outdoors" id="FLUR" name="Flur" elements="//@users.3">
+    <areas>
+      <origin x="-300.0" y="-200.0" z="0.0"/>
+      <span x="1210.0" y="100.0" z="220.0"/>
+    </areas>
+    <doors id="FLUR KITCHEN" name="Flur Kitchen" target="//@places.0">
+      <position/>
+      <open/>
+      <span/>
+    </doors>
+  </places>
+  <devices id="GESTURE_DEVICE" name="GESTURE_DEVICE">
+    <resources xsi:type="Context:GestureIR" id="GESTURE_DEVICE_GESTURE_IR" name="Gestikger&#xe4;t" place="//@places.0" modality="Haptic" personal="Kurt">
+      <position x="50.0" y="200.0" z="0.0"/>
+      <gestureRecognition id="GESTURE_DEVICE_GESTURE_IR_MIC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="GESTURE_DEVICE_GESTURE_IR"/>
+      </gestureRecognition>
+    </resources>
+  </devices>
+  <devices id="SHEM_TOUCH" name="SHEM_TOUCH">
+    <resources xsi:type="Context:Keyboard" id="SHEM_TOUCH_KEYBOARD" name="SHEM_TOUCH_KEYBOARD" place="//@places.0" modality="Haptic">
+      <position x="600.0" y="250.0" z="0.0"/>
+      <keys id="SHEM_TOUCH_KEYBOARD_MIC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="SHEM_TOUCH_KEYBOARD"/>
+      </keys>
+    </resources>
+    <resources xsi:type="Context:Touchscreen" id="SHEM_TOUCH_DISPLAY" name="Kleiner Touchscreen K&#xfc;che" place="//@places.0" xPixels="1024" yPixels="768" size="15">
+      <position x="600.0" y="250.0" z="0.0"/>
+      <screen id="SHEM_TOUCH_DISPLAY_GOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="SHEM_TOUCH_DISPLAY"/>
+      </screen>
+    </resources>
+  </devices>
+  <devices id="N800" name="N800">
+    <resources xsi:type="Context:Display" id="N800_DISPLAY" name="Mobiles Ger&#xe4;t" place="//@places.0" mobile="true" xPixels="800" yPixels="480" size="6">
+      <position x="750.0" y="250.0" z="0.0"/>
+      <screen id="N800_DISPLAY_GOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="N800_DISPLAY"/>
+      </screen>
+    </resources>
+    <resources xsi:type="Context:Keyboard" id="N800_KEYBOARD" name="N800_KEYBOARD" place="//@places.0" modality="Haptic" mobile="true">
+      <position x="750.0" y="250.0" z="0.0"/>
+      <keys id="N800_KEYBOARD_MIC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="N800_KEYBOARD"/>
+      </keys>
+    </resources>
+  </devices>
+  <devices id="WORKROOM" name="WORKROOM">
+    <resources xsi:type="Context:Display" id="WORKROOM_DISPLAY" name="Fernseher Arbeitszimmer" place="//@places.2" xPixels="1360" yPixels="768" size="32">
+      <position x="-100.0" y="100.0" z="0.0"/>
+      <screen id="WORKROOM_DISPLAY_GOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="WORKROOM_DISPLAY"/>
+      </screen>
+    </resources>
+    <resources xsi:type="Context:Keyboard" id="WORKROOM_KEYBOARD" name="WORKROOM_KEYBOARD" place="//@places.2" modality="Haptic">
+      <position x="-100.0" y="100.0" z="0.0"/>
+      <keys id="WORKROOM_KEYBOARD_MIC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="WORKROOM_KEYBOARD"/>
+      </keys>
+    </resources>
+  </devices>
+  <devices id="WORKROOM_DOOR" name="WORKROOM_DOOR">
+    <resources xsi:type="Context:Keyboard" id="WORKROOM_DOOR_KEYBOARD" name="WORKROOM_DOOR_KEYBOARD" place="//@places.2" modality="Haptic">
+      <position x="-100.0" y="300.0" z="0.0"/>
+      <keys id="WORKROOM_DOOR_KEYBOARD_MIC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="WORKROOM_DOOR_KEYBOARD"/>
+      </keys>
+    </resources>
+    <resources xsi:type="Context:Display" id="WORKROOM_DOOR_DISPLAY" name="Fernseher Studio" place="//@places.2" xPixels="1360" yPixels="768" size="32">
+      <position x="-100.0" y="300.0" z="0.0"/>
+      <screen id="WORKROOM_DOOR_GOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="WORKROOM_DOOR_DISPLAY"/>
+      </screen>
+    </resources>
+  </devices>
+  <devices id="1337" name="1337">
+    <resources xsi:type="Context:Loudspeaker" id="1337_LOUDSPEAKER" name="Lautsprecher K&#xfc;che" place="//@places.0" modality="Audio">
+      <position x="750.0" y="250.0" z="0.0"/>
+      <voice id="1337_LOUDSPEAKER_MOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="1337"/>
+      </voice>
+    </resources>
+  </devices>
+  <devices id="DELL_30" name="DELL_30">
+    <resources xsi:type="Context:Keyboard" id="DELL_30_KEYBOARD" name="DELL_30_KEYBOARD" place="//@places.1" modality="Haptic">
+      <position x="550.0" y="50.0" z="0.0"/>
+      <keys id="DELL_30_KEYBOARD_MIC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="DELL_30_KEYBOARD"/>
+      </keys>
+    </resources>
+    <resources xsi:type="Context:Display" id="DELL_30_DISPLAY" name="Bildschirm Wohnzimmerecke" place="//@places.1" xPixels="2560" yPixels="1600" size="30">
+      <position x="550.0" y="50.0" z="0.0"/>
+      <screen id="DELL_30_DISPLAY_GOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="DELL_30_DISPLAY"/>
+      </screen>
+    </resources>
+  </devices>
+  <devices id="1338" name="1338">
+    <resources xsi:type="Context:Loudspeaker" id="1338_LOUDSPEAKER" name="Lautsprecher Wohnzimmer" place="//@places.1" modality="Audio">
+      <position x="50.0" y="200.0" z="0.0"/>
+      <voice id="1338_LOUDSPEAKER_MOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="1338"/>
+      </voice>
+    </resources>
+  </devices>
+  <devices id="SHARP_65" name="SHARP_65">
+    <resources xsi:type="Context:Display" id="SHARP_65_DISPLAY" name="Fernseher Wohnzimmer" place="//@places.1" xPixels="1920" yPixels="1080" size="65">
+      <position x="50.0" y="200.0" z="0.0"/>
+      <screen id="SHARP_65_DISPLAY_GOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="SHARP_65_DISPLAY"/>
+      </screen>
+    </resources>
+    <resources xsi:type="Context:Keyboard" id="SHARP_65_KEYBOARD" name="SHARP_65_KEYBOARD" place="//@places.1" modality="Haptic">
+      <position x="50.0" y="200.0" z="0.0"/>
+      <keys id="SHARP_65_KEYBOARD_MIC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="SHARP_65_KEYBOARD"/>
+      </keys>
+    </resources>
+  </devices>
+  <devices id="KITCHEN" name="KITCHEN">
+    <resources xsi:type="Context:Touchscreen" id="KITCHEN_DISPLAY" name="Touchscreen K&#xfc;che" place="//@places.0" xPixels="1280" yPixels="1024" size="18">
+      <position x="750.0" y="250.0" z="0.0"/>
+      <screen id="KITCHEN_DISPLAY_GOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="KITCHEN_DISPLAY"/>
+      </screen>
+    </resources>
+    <resources xsi:type="Context:Keyboard" id="KITCHEN_KEYBOARD" name="KITCHEN_KEYBOARD" place="//@places.0" modality="Haptic">
+      <position x="750.0" y="250.0" z="0.0"/>
+      <keys id="KITCHEN_KEYBOARD_MIC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="KITCHEN_KEYBOARD"/>
+      </keys>
+    </resources>
+  </devices>
+  <devices id="DRAGON" name="DRAGON">
+    <resources xsi:type="Context:Microphone" id="DRAGON_MICROPHONE" name="Tragbares Mikrofon" place="//@places.0" modality="Vocal" personal="Kurt">
+      <position/>
+      <voiceRecognition id="DRAGON_MICROPHONE_MIC" name="" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="DRAGON"/>
+      </voiceRecognition>
+    </resources>
+  </devices>
+  <devices id="LIVING_ROOM_TOUCH" name="LIVING_ROOM_TOUCH">
+    <resources xsi:type="Context:Keyboard" id="LIVING_ROOM_TOUCH_KEYBOARD" name="Keyboard Touchscreen Wohnzimmer" place="//@places.1" modality="Haptic">
+      <position x="275.0" y="10.0" z="0.0"/>
+      <keys id="LIVING_ROOM_TOUCH_KEYBOARD_MIC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="LIVING_ROOM_TOUCH_KEYBOARD"/>
+      </keys>
+    </resources>
+    <resources xsi:type="Context:Touchscreen" id="LIVING_ROOM_TOUCH_DISPLAY" name="Touchscreen Wohnzimmer" place="//@places.1" xPixels="1024" yPixels="768" size="15">
+      <position x="275.0" y="10.0" z="0.0"/>
+      <screen id="LIVING_ROOM_TOUCH_DISPLAY_GOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="LIVING_ROOM_TOUCH_DISPLAY"/>
+      </screen>
+    </resources>
+  </devices>
+  <devices xsi:type="Context:Hood" id="HOOD" name="Hood" place="//@places.0">
+    <position/>
+    <subDevice xsi:type="Context:Fan" id="Hood Fan" name="HOOD FAN">
+      <on actor="//@serviceContainers.5/@services.2" sensor="//@serviceContainers.5/@services.0"/>
+      <powerUsage sensor="//@serviceContainers.5/@services.1"/>
+      <speed/>
+    </subDevice>
+  </devices>
+  <devices xsi:type="Context:Hob" id="HOT PLATE" name="Hot Plate" place="//@places.0">
+    <position/>
+    <on sensor="//@serviceContainers.4/@services.0"/>
+    <powerUsage sensor="//@serviceContainers.4/@services.1"/>
+    <heatLevel/>
+  </devices>
+  <devices xsi:type="Context:Dishwasher" id="DISHWASHER" name="Dishwasher" place="//@places.0">
+    <position/>
+    <on sensor="//@serviceContainers.3/@services.0"/>
+    <powerUsage sensor="//@serviceContainers.3/@services.1"/>
+    <program/>
+  </devices>
+  <devices xsi:type="Context:Lamp" id="CEILING LIGHT" name="Ceiling Light" place="//@places.1">
+    <position/>
+    <on actor="//@serviceContainers.1/@services.2" sensor="//@serviceContainers.1/@services.3"/>
+    <powerUsage sensor="//@serviceContainers.1/@services.0"/>
+    <dimmingLevel actor="//@serviceContainers.1/@services.2" sensor="//@serviceContainers.1/@services.3"/>
+  </devices>
+  <devices xsi:type="Context:TV" id="LIVING ROOM TV" name="Living Room TV" place="//@places.1">
+    <position/>
+    <on sensor="//@serviceContainers.7/@services.0"/>
+    <powerUsage sensor="//@serviceContainers.7/@services.1"/>
+  </devices>
+  <devices xsi:type="Context:TV" id="HEALTH ROOM TV" name="Health Room TV" place="//@places.3">
+    <position/>
+    <on sensor="//@serviceContainers.8/@services.0"/>
+    <powerUsage sensor="//@serviceContainers.8/@services.1"/>
+  </devices>
+  <devices id="iPad" name="iPad">
+    <resources xsi:type="Context:Touchscreen" id="iPad_DISPLAY" name="iPad_DISPLAY" personal="iPad-User" xPixels="1024" yPixels="768" size="10">
+      <screen id="iPad_DISPLAY_GOC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="iPad_DISPLAY"/>
+      </screen>
+    </resources>
+    <resources xsi:type="Context:Keyboard" id="iPad_KEYBOARD" name="iPad_KEYBOARD" modality="Haptic" personal="iPad-User">
+      <keys id="iPad_KEYBOARD_MIC" apiClass="org.sercho.masp.models.channel.api.LegacyMASPChannel">
+        <configuration key="clientId" value="iPad_KEYBOARD"/>
+      </keys>
+    </resources>
+  </devices>
+  <devices xsi:type="Context:TemperatureSensor" id="KitchenTemperatureSensor" name="KitchenTemperatureSensor" place="//@places.0">
+    <value sensor="//@serviceContainers.6/@services.1"/>
+  </devices>
+  <devices xsi:type="Context:TemperatureSensor" id="LivingRoomTemperatureSensor" name="LivingRoomTemperatureSensor" place="//@places.1">
+    <value sensor="//@serviceContainers.6/@services.0"/>
+  </devices>
+  <devices xsi:type="Context:TemperatureSensor" id="OfficeTemperatureSensor" name="OfficeTemperatureSensor" place="//@places.2">
+    <value sensor="//@serviceContainers.6/@services.3"/>
+  </devices>
+  <devices xsi:type="Context:TemperatureSensor" id="HealthRoomTemperatureSensor" name="HealthRoomTemperatureSensor" place="//@places.3">
+    <value sensor="//@serviceContainers.6/@services.2"/>
+  </devices>
+  <devices xsi:type="Context:WaterStorageTank" id="S-501011" name="WaterStorageTank" capacity="200">
+    <subDevice xsi:type="Context:HeatingRod" id="S-501011H" name="WaterStorageTankHeatingRod" maximumPowerWatts="3000">
+      <on/>
+      <powerUsage actor="//@serviceContainers.0/@services.4" sensor="//@serviceContainers.0/@services.3"/>
+    </subDevice>
+    <temperatureSensor id="S-501011T" name="WaterStorageTankTemperatureSensor">
+      <value actor="//@serviceContainers.0/@services.2" sensor="//@serviceContainers.0/@services.1"/>
+    </temperatureSensor>
+  </devices>
+  <users id="Kevin" name="Kevin" place="//@places.0" birthDate="12.04.1997" pastAssistants="//@assistants.7 //@assistants.1 //@assistants.4" installedAssistants="//@assistants.2 //@assistants.1 //@assistants.4 //@assistants.5">
+    <position x="750.0" y="75.0" z="0.0"/>
+    <lineOfVision/>
+  </users>
+  <users id="Melanie" name="Melanie" place="//@places.0" birthDate="26.04.1971" leftHanded="true" pastAssistants="//@assistants.7 //@assistants.1 //@assistants.4" installedAssistants="//@assistants.2 //@assistants.1 //@assistants.4 //@assistants.5">
+    <position x="750.0" y="300.0" z="0.0"/>
+    <lineOfVision/>
+  </users>
+  <users id="Kurt" name="Kurt" place="//@places.1" birthDate="05.06.1955" pastAssistants="//@assistants.7 //@assistants.5" installedAssistants="//@assistants.2 //@assistants.1 //@assistants.4 //@assistants.5">
+    <position x="50.0" y="200.0" z="0.0"/>
+    <lineOfVision/>
+  </users>
+  <users id="iPad-User" name="iPad" place="//@places.4" birthDate="1.1.1980" surname="" installedAssistants="//@assistants.2 //@assistants.1 //@assistants.5">
+    <position x="0.0" y="-150.0" z="0.0"/>
+    <lineOfVision/>
+  </users>
+  <assistants xsi:type="Context:ThirdPartyAssistant" id="org/sercho/masp/demos/HosShea.xml" name="Smart Home Energy Assistant" description="SHEA monitors the energy consumption of your devices." domain="Energy">
+    <activities name="Analyze energy consumption" description="Analyze energy consumption of your appliances"/>
+  </assistants>
+  <assistants xsi:type="Context:ThirdPartyAssistant" id="org/sercho/masp/demos/vcook/VirtualCook1280.xml" name="4 Star Cooking Assistant" pastUsers="//@users.1 //@users.0" description="The Cooking Assistant helps you finding recipes and guides you through the cooking steps." domain="Living">
+    <activities name="Cooking" description="Find your favourite recipe and cook it"/>
+    <connections description="Based on your personal training plan recipe recommendations will be made." connectedAssistant="//@assistants.3"/>
+  </assistants>
+  <assistants xsi:type="Context:ThirdPartyAssistant" id="org/sercho/masp/automatingassistant/model/AutomatingAssistant.xml" name="Concierge" description="The Concierge serves your comfort by automating daily routines." domain="Comfort"/>
+  <assistants xsi:type="Context:ThirdPartyAssistant" id="org/sercho/masp/demos/sha/ApplicationStarter.xml" name="Smart Health Assistant" description="The Smart Health Assistant helps you to create your personal, ideal training programme." domain="Living">
+    <activities name="Work out" description="Improve your fitness with training"/>
+    <connections description="Recipe recommendations based on personal training plan." connectedAssistant="//@assistants.1"/>
+  </assistants>
+  <assistants xsi:type="Context:ThirdPartyAssistant" id="org/sercho/masp/demos/spa/ApplicationStarter.xml" name="Smart Personal Assistant" pastUsers="//@users.1 //@users.0" description="Use the SPA to plan your spare time and find information in the semantic web." domain="Comfort"/>
+  <assistants xsi:type="Context:ThirdPartyAssistant" id="org/sercho/masp/demos/electriccar/model/ElectricCar.xml" name="Electric Scooter Assistant" pastUsers="//@users.2" description="The Electric Scooter Assistant optimizes the battery recharging process according to your preferences." domain="Energy"/>
+  <assistants xsi:type="Context:ThirdPartyAssistant" id="org/sercho/masp/demos/iptv/model/IPTV.xml" name="Smart Media Assistant" description="Watch TV with personal recommendations." domain="Living">
+    <activities name="Watch TV" description="Watch TV with personal recommendations."/>
+  </assistants>
+  <assistants xsi:type="Context:HomeOSAssistant" id="org/sercho/masp/demos/Lobby.xml" name="Lobby" pastUsers="//@users.0 //@users.2 //@users.1"/>
+  <assistants xsi:type="Context:HomeOSAssistant" id="org/sercho/masp/demos/metaui/MetaUI.xml" name="Meta UI"/>
+  <assistants xsi:type="Context:HomeOSAssistant" id="org/sercho/masp/demos/menu/model/MenuBar.xml" name="Menu Bar"/>
+  <assistants xsi:type="Context:HomeOSAssistant" id="org/sercho/masp/demos/assistantlauncher/model/AssistantLauncher.xml" name="Assistant Launcher"/>
+  <assistants xsi:type="Context:HomeOSAssistant" id="org/sercho/masp/demos/messagecenter/model/MessageCenter.xml" name="Message Center"/>
+  <assistants xsi:type="Context:HomeOSAssistant" id="org/sercho/masp/demos/hcc/model/HCC.xml" name="Home Control Center"/>
+  <assistants xsi:type="Context:HomeOSAssistant" id="org/sercho/masp/notification/notificationwithfeedback/Notification.xml" name="Notification" description="Notification Assistant shows high priority HomeOS messages"/>
+  <assistants xsi:type="Context:HomeOSAssistant" id="org/sercho/masp/demos/assistantStore/model/AssistantStore.xml" name="AssistantStore" description="Assistant Store for installing Assistants"/>
+  <serviceContainers id="DummyServices">
+    <services xsi:type="Properties:Sensor" id="energyPriceSensor" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="0.02" key="InitialValue"/>
+      <configuration value="energyPriceVariable" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="waterStorageTemperatureSensor" properties="//@devices.23/@temperatureSensor/@value" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="30" key="InitialValue"/>
+      <configuration value="temperatureVariable" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Actor" id="waterStorageTemperatureActor" properties="//@devices.23/@temperatureSensor/@value" actorWrapperClassName="org.sercho.masp.models.Context.dummy.DummyActorWrapper">
+      <configuration value="35" key="InitialValue"/>
+      <configuration value="temperatureVariable" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="heatingRodPowerUsageSensor" properties="//@devices.23/@subDevice.0/@powerUsage" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="0" key="InitialValue"/>
+      <configuration value="currentPowerWatts" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Actor" id="heatingRodPowerUsageActor" properties="//@devices.23/@subDevice.0/@powerUsage" actorWrapperClassName="org.sercho.masp.models.Context.dummy.DummyActorWrapper">
+      <configuration value="3000" key="InitialValue"/>
+      <configuration value="currentPowerWatts" key="VariableName"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="digitalSTROM Living Room Lights">
+    <services xsi:type="Properties:Sensor" id="Light Power Usage Sensor" properties="//@devices.15/@powerUsage" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="175" key="InitialValue"/>
+      <configuration value="Light Power Usage" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Light Power Status Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="true" key="InitialValue"/>
+      <configuration value="Light Power Status" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Actor" id="Light Dimming Level Actor" properties="//@devices.15/@dimmingLevel //@devices.15/@on" actorWrapperClassName="org.sercho.masp.models.Context.dummy.DummyActorWrapper">
+      <configuration value="100" key="InitialValue"/>
+      <configuration value="Light Dimming Level" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Light Dimming Level Sensor" properties="//@devices.15/@dimmingLevel //@devices.15/@on" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="100" key="InitialValue"/>
+      <configuration value="Light Dimming Level" key="VariableName"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="Bread machine">
+    <services xsi:type="Properties:Actor" id="Bread machine Power Status Actor" actorWrapperClassName="org.sercho.masp.models.Context.dummy.DummyActorWrapper">
+      <configuration value="true" key="InitialValue"/>
+      <configuration value="Bread machine Power Status" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Bread machine Power Status Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="true" key="InitialValue"/>
+      <configuration value="Bread machine Power Status" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Bread machine Power Usage Sensor" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="2" key="InitialValue"/>
+      <configuration value="Bread machine Power Usage" key="VariableName"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="Miele Dishwasher">
+    <services xsi:type="Properties:Sensor" id="Dishwasher Power Status Sensor" properties="//@devices.14/@on" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="true" key="InitialValue"/>
+      <configuration value="Dishwasher Power Status" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Dishwasher Power Usage Sensor" properties="//@devices.14/@powerUsage" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="2" key="InitialValue"/>
+      <configuration value="Dishwasher Power Usage" key="VariableName"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="Miele Hot Plate">
+    <services xsi:type="Properties:Sensor" id="Hot Plate Power Status Sensor" properties="//@devices.13/@on" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="false" key="InitialValue"/>
+      <configuration value="Hot Plate Power Status" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Hot Plate Power Usage Sensor" properties="//@devices.13/@powerUsage" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="0" key="InitialValue"/>
+      <configuration value="Hot Plate Power Usage" key="VariableName"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="Miele Hood">
+    <services xsi:type="Properties:Sensor" id="Hood Power Status Sensor" properties="//@devices.12/@subDevice.0/@on" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="true" key="InitialValue"/>
+      <configuration value="Hood Power Status" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Hood Power Usage Sensor" value="" properties="//@devices.12/@subDevice.0/@powerUsage" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="122" key="InitialValue"/>
+      <configuration value="Hood Power Usage" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Actor" id="Hood Stop Actor" properties="//@devices.12/@subDevice.0/@on" actorWrapperClassName="org.sercho.masp.models.Context.dummy.DummyActorWrapper">
+      <configuration value="true" key="InitialValue"/>
+      <configuration value="Hood Power Status" key="VariableName"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="Riedel">
+    <services xsi:type="Properties:Sensor" id="Living Room Temperature Sensor" properties="//@devices.20/@value" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="21" key="InitialValue"/>
+      <configuration value="Living Room Temperature" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Kitchen Temperature Sensor" properties="//@devices.19/@value" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="23" key="InitialValue"/>
+      <configuration value="Kitchen Temperature" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Health Room Temperature Sensor" properties="//@devices.22/@value" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="22" key="InitialValue"/>
+      <configuration value="Health Room Temperature" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Office Temperature Sensor" properties="//@devices.21/@value" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="22" key="InitialValue"/>
+      <configuration value="Office Temperature" key="VariableName"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="Living Room TV">
+    <services xsi:type="Properties:Sensor" id="Living Room TV Power Status Sensor" available="true" properties="//@devices.16/@on" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="true" key="InitialValue"/>
+      <configuration value="Living Room TV Power Status" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Living Room TV Power Usage Sensor" available="true" properties="//@devices.16/@powerUsage" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="210" key="InitialValue"/>
+      <configuration value="Living Room TV Power Usage" key="VariableName"/>
+    </services>
+  </serviceContainers>
+  <serviceContainers id="Health Room TV">
+    <services xsi:type="Properties:Sensor" id="Health Room TV Power Status Sensor" available="true" properties="//@devices.17/@on" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="true" key="InitialValue"/>
+      <configuration value="Health Room TV Power Status" key="VariableName"/>
+    </services>
+    <services xsi:type="Properties:Sensor" id="Health Room TV Power Usage Sensor" available="true" properties="//@devices.17/@powerUsage" sensorWrapperClassName="org.sercho.masp.models.Context.dummy.DummySensorWrapper">
+      <configuration value="208" key="InitialValue"/>
+      <configuration value="Health Room TV Power Usage" key="VariableName"/>
+    </services>
+  </serviceContainers>
+</Context:Environment>

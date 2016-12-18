@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Home name="showroom">
+  <globalMatrix>-234.57832;0.0;56.617287;1458.1333;0.0;-241.31438;0.0;677.61694;-56.617287;0.0;-234.57832;1123.1633;0.0;0.0;0.0;1.0</globalMatrix>
+  <Item name="Living Room Blinds">
+    <globalMatrix>38.712452;0.0;-9.36886;344.06406;0.0;-39.829838;0.0;513.5033;9.36886;0.0;38.712452;-811.02075;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>1</variant>
+  </Item>
+  <Item name="Black Standing Lamp">
+    <globalMatrix>58.525364;0.0;-53.678074;755.80286;0.0;-79.41409;0.0;655.2128;53.678074;0.0;58.525364;90.94183;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>1</variant>
+  </Item>
+  <Item name="Office Blind">
+    <globalMatrix>36.676727;0.0;-8.911582;-527.2889;0.0;-37.743763;0.0;498.58566;8.911582;0.0;36.676727;-1028.7566;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>0</variant>
+  </Item>
+  <Item name="Walllight Living Room">
+    <globalMatrix>77.26944;0.0;-70.87021;63.251534;0.0;-104.84841;0.0;3.468789;70.87021;0.0;77.26944;626.87885;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>0</variant>
+  </Item>
+  <Item name="Studio Blinds East">
+    <globalMatrix>40.86826;0.0;-9.922796;1423.5637;0.0;-42.055458;0.0;480.97446;9.922796;0.0;40.86826;-561.1538;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>0</variant>
+  </Item>
+  <Item name="Ceiling Light Living Room">
+    <globalMatrix>62.86634;0.0;-57.65947;266.6783;0.0;-85.30464;0.0;99.23654;57.65947;0.0;62.86634;-457.85913;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>0</variant>
+  </Item>
+  <Item name="Oven">
+    <globalMatrix>-238.57956;0.0;57.026264;1606.6848;0.0;-245.3003;0.0;677.7162;-57.026264;0.0;-238.57956;111.199524;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>0</variant>
+  </Item>
+  <Item name="Studio Blinds North">
+    <globalMatrix>8.630214;0.0;41.072136;-2325.281;0.0;-41.96893;0.0;530.9138;-41.072136;0.0;8.630214;-351.94547;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>1</variant>
+  </Item>
+  <Item name="Ceiling Light Kitchen">
+    <globalMatrix>31.923532;0.0;-29.279589;1278.9437;0.0;-43.317554;0.0;-258.47885;29.279589;0.0;31.923532;373.4385;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>0</variant>
+  </Item>
+  <Item name="Ceiling Light Office">
+    <globalMatrix>52.62464;0.0;-48.26611;-633.26135;0.0;-71.407425;0.0;3.4768486;48.26611;0.0;52.62464;-300.67395;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>0</variant>
+  </Item>
+  <Item name="TV Living Room">
+    <globalMatrix>-264.38477;0.0;49.95959;-391.651;0.0;-269.0655;0.0;263.51312;-49.95959;0.0;-264.38477;180.84781;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>0</variant>
+  </Item>
+  <Item name="Hood">
+    <globalMatrix>-242.77911;0.0;55.050274;1609.4736;0.0;-248.9443;0.0;224.10681;-55.050274;0.0;-242.77911;111.92424;0.0;0.0;0.0;1.0</globalMatrix>
+    <variant>0</variant>
+  </Item>
+</Home>
+

@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<modelVersion>4.0.0</modelVersion>
+<groupId>barn</groupId>
+<artifactId>SmartHomeGUI</artifactId>
+<version>0.0.1-SNAPSHOT</version>
+<name>SmartHomeGUI</name>
+
+<dependencies>  
+	<dependency>
+	<groupId>org.sercho.masp.models</groupId>
+		<artifactId>ContextModel</artifactId>
+		<version>[1.3,1.3.99]</version>
+	</dependency>
+	<dependency>
+		<groupId>de.dailab.ait</groupId>
+		<artifactId>BSHConnector</artifactId>
+		<version>[1.3,1.3.99]</version>
+	</dependency>
+	<dependency>
+		<groupId>de.dailab.ait</groupId>
+		<artifactId>IvistarControler</artifactId>
+		<version>[1.1,1.1.99]</version>
+	</dependency>
+	<dependency>
+		<groupId>de.dailab.ait</groupId>
+		<artifactId>digitalSTROMDriver</artifactId>
+		<version>[1.0,1.0.99]</version>
+	</dependency>
+	<dependency>
+		<groupId>de.dailab.ait</groupId>
+		<artifactId>EMHDriver</artifactId>
+		<version>[1.0,1.0.99]</version>
+	</dependency>
+	<dependency>
+		<groupId>de.dailab.ait</groupId>
+		<artifactId>UPnPDriver</artifactId>
+		<version>[1.0,1.0.99]</version>
+	</dependency>
+	<dependency>
+		<groupId>de.dailab.ait</groupId>
+		<artifactId>PhidgetDriver</artifactId>
+		<version>[1.0,1.0.99]</version>
+	</dependency>
+</dependencies>
+  
+</project>

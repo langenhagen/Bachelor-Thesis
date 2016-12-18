@@ -1,0 +1,14 @@
+# This is the info-file of this model.
+# It contains additional information for the different variants.
+# A complete line in this file is built up in following format
+#
+# <Variant-Number>	<invert normals>	<crease angle>	<flipTextureX>	<flipTextureY>
+#
+# All parameters are passed as an int. As a delimeter, use space or tab.
+# By the way: begin lines with a '#' to mark them as a comment
+
+# The information is stored here:
+
+000	0	90	0	1
+001	0	90	0	1
+002	0	90	0	1

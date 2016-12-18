@@ -1,0 +1,11 @@
+# Exported from Wings 3D 1.2
+newmtl cube1_auv
+Ns 32.666666666666664
+d 0.78
+illum 2
+Kd 1.0 1.0 1.0
+Ka 0.52714 0.52714 0.52714
+Ks 0.94672 0.94672 0.94672
+Ke 0.001 0.001 0.001
+map_Kd cakoc.png
+

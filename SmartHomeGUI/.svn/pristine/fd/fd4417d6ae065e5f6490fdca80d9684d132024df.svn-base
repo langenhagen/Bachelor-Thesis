@@ -1,0 +1,40 @@
+VON GRZEGORZ ======================================================================================
+
+x		Lamp
+			       dimmingLevel (IntegerProperty)
+x		Notebook
+x		Hood
+x		PC
+x		Fan
+			       speed (IntegerProperty)
+x		RemoteControl
+x		TV
+			       currentProgram (IntegerProperty)
+x			Oven
+			       program (TextProperty)
+			       secondsRemaining (IntegerProperty)
+			       temperature (IntegerProperty)
+x			Dishwasher
+			       program (TextProperty)
+			       secondsRemaining (IntegerProperty)
+x			WashingMachine
+			       program (TextProperty)
+			       secondsRemaining (IntegerProperty)
+x		Blind
+			       level (IntegerProperty)
+x		Hob
+			       heatLevel (IntegerProperty)
+x		Cooker
+x		CookTop
+x		Fridge
+			       temperature (IntegerProperty)
+x		Mixer
+x		Radio
+x		Socket																								#
+x		Heater
+			       temperatureDemand (DoubleProperty)
+			       temperatureCurrent (DoubleProperty)
+			       valvePosition (DoubleProperty)
+x		Meter																									#
+x		WaterStorageTank
+x		HeatingRod
