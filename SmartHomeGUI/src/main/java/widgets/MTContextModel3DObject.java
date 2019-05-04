@@ -25,7 +25,7 @@ import util.Mode;
  * This class generates a 3D object of a home from a context model xml file.
  * 
  * @author langenhagen
- * @version 20120529
+ * @version 20120707
  */
 public class MTContextModel3DObject extends MT3DObject {
 
@@ -33,6 +33,9 @@ public class MTContextModel3DObject extends MT3DObject {
 	
 	/** the name of the model */
 	private String name;
+	/** the corresponding environment */
+	private Environment environment;
+	
 	/** the number of possible variants */
 	private int numOfVariants;
 	/** the number of the current active variant */
@@ -45,11 +48,17 @@ public class MTContextModel3DObject extends MT3DObject {
 	/** height of the ground */
 	private final float groundHeight = 0.1f;
 	/** width of the walls */
-	private final float wallHeight= 05.5f;
+	private final float wallHeight= 2.5f;
 	/** width of the walls */
 	private final float wallWidth = 0.1f;
 	/** width doors & windows */
-	private final float doorWidth = wallWidth * 2.05f;
+	private final float doorDepth = wallWidth * 2.05f;
+	
+	/** scales the dimensions of the positions and spans of the items. Feel free to rename */
+	private final float schwurbelMultiplikator = 0.01f;
+
+	/** the type of the mesh-child MeshType */
+	List<MeshType> meshTypeList = new LinkedList<MeshType>();
 	
 	/** ModelInfo XXX stores the crease angle, and other informations for all meshGroups of this model */
 
@@ -73,6 +82,8 @@ public class MTContextModel3DObject extends MT3DObject {
 		//loadVariants		
 		
 		name = environment.getName();
+		this.environment = environment;
+		
 		loadModel( environment);
 		
 		// pick this component instead of its children
@@ -97,6 +108,7 @@ public class MTContextModel3DObject extends MT3DObject {
 	 * to the unit in GLOBAL coordinates.
 	 */
 	public MTContextModel3DObject( PApplet pApplet, Environment environment, boolean scaleToUnit){
+		
 		this( pApplet, environment, new Vector3D(), 1);
 		
 		if(scaleToUnit)
@@ -119,6 +131,7 @@ public class MTContextModel3DObject extends MT3DObject {
 
 	
 	// PUBLIC METHODS /////////////////////////////////////////////////////////////////////////////
+		
 	
 	/* (non-Javadoc)
 	 * @see widgets.MT3DObject#invertNormals()
@@ -366,6 +379,9 @@ public class MTContextModel3DObject extends MT3DObject {
 		}
 	}
 	
+	
+	
+	
 	// PRIVATE HELPERS ////////////////////////////////////////////////////////////////////////////
 
 	/**
@@ -376,15 +392,11 @@ public class MTContextModel3DObject extends MT3DObject {
 		meshGroup = new MTComponent( this.getRenderer());
 		LinkedList<MTTriangleMesh> meshes = new LinkedList<MTTriangleMesh>();
 		
-		System.out.println("NUMOFPLACES :" + environment.getPlaces().size());
-		int stubbl = 0;
 		// create meshes for every area
 		for( Place p : environment.getPlaces()){
-			System.out.println("PLACE: NUMOFAREAS :" + p.getAreas().size());
 			for( Area a : p.getAreas()){
 		
-				//if(stubbl>0)
-				//	break;
+
 				
 				/* The single walls and the ground are combined of simple 
 				 * cuboids that are ordered in the following manner:
@@ -400,121 +412,108 @@ public class MTContextModel3DObject extends MT3DObject {
 				 *     v1          v2
 				 *
 				 */
-				System.out.println("A: " + a.getOrigin() + " : " + a.getSpan() );
 				
-				float ox = (float)a.getOrigin().getX()/100;
-				float oy = (float)a.getOrigin().getY()/100;
-				float oz = (float)a.getOrigin().getZ()/100;
-				float sx = (float)a.getSpan().getX()/100;
-				float sy = (float)a.getSpan().getY()/100;
-				float sz = (float)a.getSpan().getZ()/100;
-				float gy = oy+groundHeight;
-				
-				System.out.println();
-				System.out.println();
-				System.out.println();
-				System.out.println("ox: " + ox);
-				System.out.println("oy: " + oy);
-				System.out.println("oz: " + oz);
-				System.out.println("Sx: " + sx);
-				System.out.println("Sy: " + sy);
-				System.out.println("Sz: " + sz);
-				
-				System.out.println();
-				System.out.println();
-				System.out.println();
+				float aox = -(float)a.getOrigin().getX() * schwurbelMultiplikator;
+				float aoy = (float)a.getOrigin().getZ() * schwurbelMultiplikator;
+				float aoz = (float)a.getOrigin().getY() * schwurbelMultiplikator;
+				float asx = -(float)a.getSpan().getX() * schwurbelMultiplikator;
+				float asy = wallHeight;
+				//float asy = (float)a.getSpan().getZ() * schwurbelMultiplikator;
+				float asz = (float)a.getSpan().getY() * schwurbelMultiplikator;
+				float agy = aoy+groundHeight;
+			
 								
 				// ground mesh //
-				MTTriangleMesh ground = loadGroundCube();
-				ground.scaleGlobal( sx, groundHeight, sz, Vector3D.ZERO_VECTOR);
-				ground.translateGlobal( new Vector3D( ox, oy, oz));
+				MTTriangleMesh ground = loadMesh("./cubes/groundCube.obj");
+				ground.scaleGlobal( asx, groundHeight, asz, Vector3D.ZERO_VECTOR);
+				ground.translateGlobal( new Vector3D( aox, aoy, aoz));
+				meshTypeList.add( MeshType.Ground);
 				meshes.add( ground);
 				
 				// Wall #1 mesh //
-				MTTriangleMesh wall1 = loadWallCube();
-				wall1.scaleGlobal( sx, wallHeight, wallWidth, Vector3D.ZERO_VECTOR);
-				wall1.translateGlobal( new Vector3D( ox, gy, oz));
+				MTTriangleMesh wall1 = loadMesh("./cubes/wallCube.obj");
+				wall1.scaleGlobal( asx, asy, wallWidth, Vector3D.ZERO_VECTOR);
+				wall1.translateGlobal( new Vector3D( aox, agy, aoz));
+				meshTypeList.add( MeshType.Wall);
 				meshes.add( wall1);
 				
 				// Wall #2 mesh //
-				MTTriangleMesh wall2 = loadWallCube();
-				wall2.scaleGlobal( sx, wallHeight, wallWidth, Vector3D.ZERO_VECTOR);
-				wall2.translateGlobal( new Vector3D( ox, gy, oz+sz-wallWidth));
+				MTTriangleMesh wall2 = loadMesh("./cubes/wallCube.obj");
+				wall2.scaleGlobal( asx, asy, wallWidth, Vector3D.ZERO_VECTOR);
+				wall2.translateGlobal( new Vector3D( aox, agy, aoz+asz-wallWidth));
+				meshTypeList.add( MeshType.Wall);
 				meshes.add( wall2);
 				
 				// Wall #3 mesh //
-				MTTriangleMesh wall3 = loadWallCube();
-				wall3.scaleGlobal( wallWidth, wallHeight, sz-2*wallWidth, Vector3D.ZERO_VECTOR);
-				wall3.translateGlobal( new Vector3D( ox, gy, oz+wallWidth));
+				MTTriangleMesh wall3 = loadMesh("./cubes/wallCube.obj");
+				wall3.scaleGlobal( wallWidth, asy, asz-2*wallWidth, Vector3D.ZERO_VECTOR);
+				wall3.translateGlobal( new Vector3D( aox-wallWidth, agy, aoz+wallWidth));
+				meshTypeList.add( MeshType.Wall);
 				meshes.add( wall3);
 				
 				// Wall #4 mesh //
-				MTTriangleMesh wall4 = loadWallCube();
-				wall4.scaleGlobal( wallWidth, wallHeight, sz-2*wallWidth, Vector3D.ZERO_VECTOR);
-				wall4.translateGlobal( new Vector3D( ox+sx-wallWidth,gy, oz+wallWidth));
+				MTTriangleMesh wall4 = loadMesh("./cubes/wallCube.obj");
+				wall4.scaleGlobal( wallWidth, asy, asz-2*wallWidth, Vector3D.ZERO_VECTOR);
+				wall4.translateGlobal( new Vector3D( aox+asx,agy, aoz+wallWidth));
+				meshTypeList.add( MeshType.Wall);
 				meshes.add( wall4);	
 				
-				stubbl++;
-				
 			} // END for place.areas
-			
-			// doors //
 			for( Door d : p.getDoors()){
-				MTTriangleMesh door = loadDoorCube();
+				
+				// doors //
+				
+				MTTriangleMesh door = loadMesh("./cubes/doorCube.obj");
+				
+				float dpx = -(float)d.getPosition().getX() * schwurbelMultiplikator;
+				float dpy = (float)d.getPosition().getZ() * schwurbelMultiplikator;
+				float dpz = (float)d.getPosition().getY() * schwurbelMultiplikator;
+				float dsx = -(float)d.getSpan().getX() * schwurbelMultiplikator;
+				float dsy = (float)d.getSpan().getZ() * schwurbelMultiplikator;
+				float dsz = (float)d.getSpan().getY() * schwurbelMultiplikator;
 				
 				door.scaleGlobal(
-						Math.max((float)d.getSpan().getX()/100, doorWidth),
-						Math.max((float)d.getSpan().getY()/100, doorWidth),
-						Math.max((float)d.getSpan().getZ()/100, doorWidth),
+						Math.min( dsx, doorDepth),
+						Math.max( dsy, doorDepth),
+						Math.max( dsz, doorDepth),
 						Vector3D.ZERO_VECTOR
 						);
 				
-				float translateX =
-					d.getSpan().getX()/100 > doorWidth ? 
-							(float)d.getPosition().getX()/100 : 
-								(float)d.getPosition().getX()/100 - doorWidth/2;
-				float translateY =
-					d.getSpan().getY()/100 > doorWidth ? 
-							(float)d.getPosition().getY()/100 : 
-								(float)d.getPosition().getY()/100 - doorWidth/2;
-
-				float translateZ =
-					d.getSpan().getZ()/100 > doorWidth ? 
-							(float)d.getPosition().getZ()/100 : 
-								(float)d.getPosition().getZ()/100 - doorWidth/2;
-							
-				door.translateGlobal( new Vector3D(translateX, translateY, translateZ));
-								
+				float translateX = dsx < doorDepth ? dpx : dpx - doorDepth/2;
+				float translateY = dsy > doorDepth ? dpy : dpy - doorDepth/2;
+				float translateZ = dsz > doorDepth ? dpz : dpz - doorDepth/2;
+											
+				door.translateGlobal( new Vector3D(translateX, translateY, translateZ));				
+				meshTypeList.add( MeshType.Door);
 				meshes.add( door);
 			}
 			for( Window w : p.getWindows() ){
-
-				MTTriangleMesh window = loadWindowCube();
 				
-				// TODO: get a better model
-				System.out.println("WWDOW " + w.getPosition() + "\n" + w.getSpan());
-			/*	window.scaleGlobal(
-						Math.max((float)w.getSpan().getX()/100, doorWidth),
-						Math.max((float)w.getSpan().getY()/100, doorWidth),
-						Math.max((float)w.getSpan().getZ()/100, doorWidth),
+				// windows //
+
+				MTTriangleMesh window = loadMesh("./cubes/windowCube.obj");
+				
+				float wpx = -(float)w.getPosition().getX() * schwurbelMultiplikator;
+				float wpy = (float)w.getPosition().getZ() * schwurbelMultiplikator;
+				float wpz = (float)w.getPosition().getY() * schwurbelMultiplikator;
+				
+				//FIXME
+				float wsx = -(float)w.getSpan().getX() * schwurbelMultiplikator;
+				float wsy = (float)w.getSpan().getZ() * schwurbelMultiplikator;
+				float wsz = (float)w.getSpan().getY() * schwurbelMultiplikator;				
+				window.scaleGlobal(
+						Math.min( wsx, doorDepth),
+						Math.max( wsy, doorDepth),
+						Math.max( wsz, doorDepth),
 						Vector3D.ZERO_VECTOR
 						);
 				
-				float translateX =
-					w.getSpan().getX()/100 > doorWidth ? 
-							(float)w.getPosition().getX()/100 : 
-								(float)w.getPosition().getX()/100 - doorWidth/2;
-				float translateY =
-					w.getSpan().getY()/100 > doorWidth ? 
-							(float)w.getPosition().getY()/100 : 
-								(float)w.getPosition().getY()/100 - doorWidth/2;
-				float translateZ =
-					w.getSpan().getZ()/100 > doorWidth ? 
-							(float)w.getPosition().getZ()/100 : 
-								(float)w.getPosition().getZ()/100 - doorWidth/2;
-							
-				window.translateGlobal( new Vector3D(translateX, translateY, translateZ));
-					*/
+				float translateX = wsx < doorDepth ? wpx : wpx - doorDepth/2;
+				float translateY = wsy > doorDepth ? wpy : wpy - doorDepth/2;
+				float translateZ = wsz > doorDepth ? wpz : wpz - doorDepth/2;
+										
+				window.translateGlobal( new Vector3D(translateX, translateY, translateZ));	/**/				
+				meshTypeList.add( MeshType.Window);
 				meshes.add( window);
 			}
 			
@@ -524,7 +523,9 @@ public class MTContextModel3DObject extends MT3DObject {
 		// add meshes to the meshGroup & find biggest mesh
 		MTTriangleMesh biggestMesh = meshes.get( 0);
 		for( MTTriangleMesh mesh : meshes){
+			
 			//clear previously registered input processors
+			
 			mesh.unregisterAllInputProcessors();
 			mesh.removeAllGestureEventListeners();
 			mesh.setPickable(true);
@@ -547,44 +548,32 @@ public class MTContextModel3DObject extends MT3DObject {
 		this.addChild( meshGroup);
 	}
 
-	private MTTriangleMesh loadWallCube(){
+	
+	/**
+	 * Loads the correspinding triangle mesh.
+	 * @param
+	 * The path of the mesh file as a <i>String</i>. Usually a obj file.
+	 * @return
+	 * The corresponding <i>MTTriangleMesh</i>.
+	 */
+	private MTTriangleMesh loadMesh(String path){
 		
 		return ModelImporterFactory.loadModel(
-				this.getRenderer(),					// the App
-				"./cubes/wallCube.obj",				// the File
-				0,		// Sharpness of the Edges
-				false,		// wether to flip the Texture at the y-Axis
-				false)[0];		// wether to flip the Texture at the x-Axis
+				this.getRenderer(),		// the App
+				path,					// the File
+				0,						// Sharpness of the Edges
+				false,					// wether to flip the Texture at the y-Axis
+				false)[0];				// wether to flip the Texture at the x-Axis
 	}
 	
-	private MTTriangleMesh loadGroundCube(){
-		
-		return ModelImporterFactory.loadModel(
-				this.getRenderer(),					// the App
-				"./cubes/groundCube.obj",				// the File
-				0,		// Sharpness of the Edges
-				false,		// wether to flip the Texture at the y-Axis
-				false)[0];		// wether to flip the Texture at the x-Axis
+	// INNER CLASSES //////////////////////////////////////////////////////////////////////////////
+	
+	private enum MeshType{
+		Ground,
+		Wall,
+		Door,
+		Window
 	}
 	
-	private MTTriangleMesh loadDoorCube(){
-		
-		return ModelImporterFactory.loadModel(
-				this.getRenderer(),					// the App
-				"./cubes/doorCube.obj",				// the File
-				0,		// Sharpness of the Edges
-				false,		// wether to flip the Texture at the y-Axis
-				false)[0];		// wether to flip the Texture at the x-Axis
-	}
-
-	private MTTriangleMesh loadWindowCube(){
-		
-		return ModelImporterFactory.loadModel(
-			this.getRenderer(),					// the App
-			"./cubes/windowCube.obj",				// the File
-			0,		// Sharpness of the Edges
-			false,		// wether to flip the Texture at the y-Axis
-			false)[0];		// wether to flip the Texture at the x-Axis
-	}
 	
 }

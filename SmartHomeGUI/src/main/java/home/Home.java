@@ -163,8 +163,8 @@ public class Home {
 	private void processDevice(PhysicalDevice device) {
 		
     	Item item = new Item(device.getName(), device, this);
+    	item.getView().setLight( view.getLight());
     	
-		item.getView().setLight( view.getLight());
     	this.addItem( item);
 	}
 	

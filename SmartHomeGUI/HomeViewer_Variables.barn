@@ -1,0 +1,27 @@
+# This file contains global variables at a central place, for easy maintenance of the project.
+# It is connected with the class util.GlobalVariables.
+# This file is the standard file, that will be loaded, if no other file is given by the first command line parameter.
+#
+# You can implement any string-based variable with the sheme:
+# <key> = <value>
+#
+# Please note, that the first equality-sign is the marker where the key ends and the value begins.
+#
+# author: langenhagen
+# version: 20120907
+
+# determines which file chooser dialog shall be used in the runtime or if the user should decide by himself
+askForFileChooser = false
+useMT4jFileChooser = false
+
+# determines, whether to use the classic old showroom-3d model or a dynamic generated model
+useClassic3DModel = false
+
+# indicates, whether the context model shall be chosen by the user or if the hard coded variant shall be chosen
+useHardCodedContextModel = false
+contextModelPath = C:/Users/langenhagen/Documents/ContextModel.xmi
+
+# paths to the resource files
+models = res/lowResModels
+fonts = ./../res/fonts
+textures = res/textures

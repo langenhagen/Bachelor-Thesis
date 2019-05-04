@@ -371,7 +371,7 @@ public class GUITextures {
 	 * @param The <i>DeviceType</i>.
 	 * @return  The corresponding texture as a <i>PIMage</I>.
 	 */
-	public PImage getDevice( DeviceType type){
+	public PImage getByDevice( DeviceType type){
 		
 		PImage ret = null;
 		

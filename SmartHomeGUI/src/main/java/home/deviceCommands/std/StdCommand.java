@@ -287,7 +287,7 @@ public abstract class StdCommand extends DeviceCommand {
 						pnlInteractionPos.getX() + pnlInteraction.getWidthXY( TransformSpace.GLOBAL)/2,
 						pnlInteractionPos.getY() + 50 + pnlPicture.getHeightXY( TransformSpace.GLOBAL)/2
 				));
-		pnlPicture.setTexture( GUITextures.instance().getDevice( DeviceType.getDeviceType( device)));
+		pnlPicture.setTexture( GUITextures.instance().getByDevice( DeviceType.getDeviceType( device)));
 		
 		
 		// POWER USAGE TEXTAREA

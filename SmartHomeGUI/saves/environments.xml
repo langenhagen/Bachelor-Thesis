@@ -2,6 +2,7 @@
 <choices>
   <currentChoice>ContextModel_Offline_Classic.xmi</currentChoice>
   <choice>ContextModel_modified.xmi</choice>
+  <choice>ContextModel.xmi</choice>
   <choice>ContextModel_Offline.xmi</choice>
 </choices>
 

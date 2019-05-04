@@ -34,6 +34,7 @@ import org.sercho.masp.models.Context.Environment;
 import provider.GUI3DModels;
 
 import scenes.AbstractGUIScene;
+import util.GlobalVariables;
 import widgets.MT3DObject;
 import widgets.MTContextModel3DObject;
 import widgets.MTSlider;
@@ -156,7 +157,8 @@ public class HomeScene extends AbstractGUIScene {
 		
 		// create home view
 		MT3DObject homeView;
-		if(false){
+		boolean takeContextModel3DObject = GlobalVariables.instance().get("useClassic3DModel").equals("false");
+		if( takeContextModel3DObject){
 			homeView = new MTContextModel3DObject( mtApp, environment, false);
 			homeView.scaleToUnit( 20000);
 		}
@@ -171,15 +173,15 @@ public class HomeScene extends AbstractGUIScene {
 		homeView.setLight( light);
 		area.addChild( homeView);
 
-		Vector3D upvector = new Vector3D( 0,1,0);
+		final Vector3D upvector = new Vector3D( 0,1,0);
 		
 		
 		home = new Home( "showroom", environment, homeView, upvector);
 		
 		String path = "saves/state_" + contextModelPath.substring( contextModelPath.lastIndexOf('\\')+1, contextModelPath.lastIndexOf('.')) + ".xml";
 		
-		home.setStateWriter( new XMLWriter(path));
 		home.setStateReader( new XMLReader(path));
+		home.setStateWriter( new XMLWriter(path));
 		home.loadState();
 		
 		// create helper grid?
@@ -191,7 +193,7 @@ public class HomeScene extends AbstractGUIScene {
 		homeView.addGestureListener( ScaleProcessor.class, new ZoomListener( this.getSceneCam(), 3));
 		
 		
-		// necessary for reducing the space, where the home is movable
+		// necessary for reducing the space where the home is movable
 		home.setMovingPlaneNormal( home.getMovingPlaneNormal());
 		for( Item i : home.getAllItems()){
 			area.addChild( i.getView());
@@ -218,7 +220,7 @@ public class HomeScene extends AbstractGUIScene {
 		
 		sliderZoom = GUIFactory.instance().createSlider("sliderZoom", overlay);
 		sliderZoom.setPosition( new Vector3D(sliderZoom.getPosition().getX(), mtApp.getHeight()/2-sliderZoom.getHeight() - 5));
-		sliderZoom.setValueRange( -15000, 300);
+		sliderZoom.setValueRange( -30000, 300);
 		sliderZoom.setValue( initSliderZoomValue);
 		sliderZoom.addGestureListener( DragProcessor.class, l.createSliderZoomListener( sliderZoom, this.getSceneCam()));
 		float factor = sliderZoom.getMaxValue() - sliderZoom.getValue()+1;

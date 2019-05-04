@@ -6,7 +6,7 @@ home
 home.deviceCommands
 home.deviceCommands.factories
 home.deviceCommands.std
-home.helloHomeScene
+home.homeScene
 home.stateReadersWriters
 home.stateVisualizers
 home.stateVisualizers.factories

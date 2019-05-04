@@ -45,9 +45,6 @@ public class TestSettingsLoader {
 					continue;
 				}
 				
-				line = reader.readLine();
-				
-				
 				switch (i){
 				case 0:		// num models
 					numObjects = new Integer( line);
@@ -65,10 +62,12 @@ public class TestSettingsLoader {
 					maxSize = new Double( line);
 					break;
 				}
-				i++;	
+				i++;
+				line = reader.readLine();
 			}
 		}catch (Exception e){
-			e.printStackTrace();	
+			e.printStackTrace();
+			return false;
 		}
 	
 		System.out.println("Read settings file");

@@ -82,7 +82,6 @@ public class XMLReader implements StateReader {
 				
 				parseItem(xmlElement, home);
 				
-				
 			}else if( xmlElement.getName().equalsIgnoreCase( "globalMatrix")){
 				
 				MT3DObject obj = home.getView();
@@ -109,7 +108,7 @@ public class XMLReader implements StateReader {
 
 		Item item = home.getItem( element.getAttributeValue( "id"));
 		if(item==null){
-			System.err.println("Error: Item with id " + element.getName() + " cannot be found!");
+			System.err.println("Error: Item with id " + element.getAttributeValue("id") + " cannot be found!");
 			return;
 		}
 			
